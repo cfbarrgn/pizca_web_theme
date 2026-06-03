@@ -1,9 +1,111 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "announcement_text": "🌶 Free shipping on orders over $60 · New: Black Garlic & Habanero drops now live",
     "color_terra": "#c94a1e",
     "color_gold": "#d4943a",
     "color_black": "#151009",
-    "color_parchment": "#f5ede0"
+    "color_parchment": "#f5ede0",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "main_menu": "main-menu"
+        }
+      },
+      "hero": {
+        "type": "hero",
+        "settings": {
+          "image_caption": "",
+          "badge_text": "Small Batch · Michigan USA",
+          "title_line1": "Simple",
+          "title_line2": "Ingredients,",
+          "title_line3": "Deep",
+          "title_line4": "Flavor",
+          "tagline": "Chile in oil. Made the traditional way.",
+          "description": "Hand-toasted chiles, and nothing else that doesn't belong. Each batch is made by hand. Every jar is worth it.",
+          "cta_primary_label": "Shop Now",
+          "cta_primary_url": "",
+          "cta_secondary_label": "Our Story",
+          "cta_secondary_url": "shopify://pages/our-story",
+          "heat_level": 3,
+          "heat_label": "Medium-Hot"
+        }
+      },
+      "marquee": {
+        "type": "marquee",
+        "settings": {
+          "marquee_text": "Hand-Toasted Chiles | Small Batch | Hand-harvested Mexican Sea Salt | Fresh Garlic | No Preservatives | Made in Michigan"
+        }
+      },
+      "featured-products": {
+        "type": "featured-products",
+        "settings": {
+          "eyebrow": "The Collection",
+          "title": "Our *Sauces*",
+          "collection": "all-sauces",
+          "products_to_show": 2
+        }
+      },
+      "our-story": {
+        "type": "our-story",
+        "settings": {
+          "image_caption": "",
+          "eyebrow": "Our Story",
+          "title": "Born in Mexico",
+          "body_text": "<p>Pizca Chile is a Michigan-based company born out of a passion for sharing a beloved, traditional Mexican chile in oil recipe that has been treasured for generations. The recipe made its way to America and was shared with a close circle of friends — and after one taste, everyone agreed that the incredible, incomparable flavor of Pizca Chile was simply too good to keep to themselves!</p><p>Pizca Chile is a real food condiment made with love! Our Mexican chile in oil is crafted in small batches using quality, wholesome ingredients that promote health and great flavor. Oil separation is completely natural, so give your chile a good stir before each use. No refrigeration needed — though if you enjoy it cold, that works too!</p>"
+        }
+      },
+      "cookbook": {
+        "type": "cookbook",
+        "settings": {
+          "eyebrow": "Cookbook",
+          "title": "Cook with Brasa"
+        }
+      },
+      "stores": {
+        "type": "stores",
+        "settings": {
+          "eyebrow": "Find Us",
+          "title": "In Stores Near You",
+          "cta_text": "Can't find us near you? We ship worldwide.",
+          "cta_label": "Order Online",
+          "cta_url": ""
+        }
+      },
+      "testimonials": {
+        "type": "testimonials",
+        "settings": {
+          "eyebrow": "What People Say",
+          "title": "They're Obsessed",
+          "rating_text": "4.9 / 5 — 1,240 reviews"
+        }
+      },
+      "newsletter": {
+        "type": "newsletter",
+        "settings": {
+          "title": "Get Fired Up",
+          "description": "New batches, recipes, and store drops — straight to your inbox. No spam. Just heat.",
+          "placeholder": "your@email.com",
+          "button_label": "Join"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "tagline": "Chile in oil. Made the traditional way.",
+          "description": "Small batch, hand-crafted chile in oil made in Michigan, USA. No preservatives. No shortcuts. Just flavorful fire."
+        }
+      }
+    },
+    "content_for_index": []
   }
 }
