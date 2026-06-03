@@ -6,10 +6,10 @@
       {%- for image in product.images -%}
         <div class="product-gallery-item {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}">
           <img
-            src="{{ image | img_url: '800x1000', crop: 'center' }}"
+            src="{{ image | image_url: '800x1000', crop: 'center' }}"
             alt="{{ image.alt | escape }}"
             width="800" height="1000"
-            loading="{{ forloop.first | iif: 'eager', 'lazy' }}"
+            loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
           />
         </div>
       {%- endfor -%}
@@ -17,7 +17,7 @@
         <div class="product-gallery-thumbs">
           {%- for image in product.images -%}
             <button class="thumb {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}" aria-label="View image {{ forloop.index }}">
-              <img src="{{ image | img_url: '120x120', crop: 'center' }}" alt="{{ image.alt | escape }}" width="120" height="120" loading="lazy" />
+              <img src="{{ image | image_url: '120x120', crop: 'center' }}" alt="{{ image.alt | escape }}" width="120" height="120" loading="lazy" />
             </button>
           {%- endfor -%}
         </div>
@@ -114,6 +114,10 @@
 
   </div>
 </section>
+
+<script>
+  window.shopifyVariants = {{ product.variants | json }};
+</script>
 
 {% schema %}
 {
