@@ -1,0 +1,107 @@
+<section id="story" class="story">
+  <div class="story-media">
+    {%- if section.settings.image -%}
+      <img
+        src="{{ section.settings.image | img_url: '900x' }}"
+        alt="{{ section.settings.image.alt | escape }}"
+        class="story-img-tag"
+        width="900"
+        loading="lazy"
+      />
+    {%- else -%}
+      <div class="story-img-placeholder">
+        <span class="img-label">{{ section.settings.image_caption }}</span>
+      </div>
+    {%- endif -%}
+    <div class="story-ring ring1"></div>
+    <div class="story-ring ring2"></div>
+    <div class="story-ring ring3"></div>
+  </div>
+
+  <div class="story-text">
+    <p class="section-eyebrow">{{ section.settings.eyebrow }}</p>
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+
+    <div class="story-body">
+      {{ section.settings.body_text }}
+    </div>
+
+    <div class="story-stats">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'stat' -%}
+          <div {{ block.shopify_attributes }}>
+            <div class="stat-num">{{ block.settings.number }}</div>
+            <div class="stat-label">{{ block.settings.label }}</div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Our Story",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Story image"
+    },
+    {
+      "type": "text",
+      "id": "image_caption",
+      "label": "Image caption",
+      "default": "Tlacolula Market, Oaxaca"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Our Story"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Born in a Mercado"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Story body text",
+      "default": "<p>It started with a jar we couldn't stop eating. A grandmother's recipe, passed between market stalls in Tlacolula. We asked, she taught us, and we've never cooked the same way since.</p><p>Every batch of Brasa starts with chiles sourced from the same valley farms, toasted over wood fire, and slow-steeped in oil for 72 hours. No shortcuts. No additives. Just what's been working for centuries.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number / Value",
+          "default": "72h"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Slow Steep"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Story",
+      "blocks": [
+        { "type": "stat", "settings": { "number": "72h", "label": "Slow Steep" } },
+        { "type": "stat", "settings": { "number": "4",   "label": "Ingredients" } },
+        { "type": "stat", "settings": { "number": "2019","label": "Founded" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

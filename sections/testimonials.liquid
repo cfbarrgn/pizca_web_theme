@@ -1,0 +1,79 @@
+<section class="testimonials">
+  <div class="testimonials-head">
+    <p class="section-eyebrow">{{ section.settings.eyebrow }}</p>
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+    <div class="rating-row">
+      {%- for i in (1..5) -%}<span class="star">★</span>{%- endfor -%}
+      {%- if section.settings.rating_text != blank -%}
+        <span class="rating-label">{{ section.settings.rating_text }}</span>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="testimonials-grid">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'testimonial' -%}
+        <div class="testimonial reveal" {{ block.shopify_attributes }}>
+          <p class="testimonial-text">{{ block.settings.quote }}</p>
+          <div class="testimonial-author">— {{ block.settings.author }}</div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "What People Say"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "They're Obsessed"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating label",
+      "default": "4.9 / 5 — 1,240 reviews"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "I put this on literally everything. No regrets. None at all."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Camille R., Paris"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        { "type": "testimonial" },
+        { "type": "testimonial" },
+        { "type": "testimonial" }
+      ]
+    }
+  ]
+}
+{% endschema %}

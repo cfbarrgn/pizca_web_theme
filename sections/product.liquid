@@ -1,0 +1,126 @@
+<section class="product-page">
+  <div class="product-page-grid">
+
+    <!-- Images -->
+    <div class="product-gallery">
+      {%- for image in product.images -%}
+        <div class="product-gallery-item {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}">
+          <img
+            src="{{ image | img_url: '800x1000', crop: 'center' }}"
+            alt="{{ image.alt | escape }}"
+            width="800" height="1000"
+            loading="{{ forloop.first | iif: 'eager', 'lazy' }}"
+          />
+        </div>
+      {%- endfor -%}
+      {%- if product.images.size > 1 -%}
+        <div class="product-gallery-thumbs">
+          {%- for image in product.images -%}
+            <button class="thumb {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}" aria-label="View image {{ forloop.index }}">
+              <img src="{{ image | img_url: '120x120', crop: 'center' }}" alt="{{ image.alt | escape }}" width="120" height="120" loading="lazy" />
+            </button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <!-- Info -->
+    <div class="product-info-panel">
+      {%- if product.tags contains 'best-seller' -%}
+        <span class="product-badge">Best Seller</span>
+      {%- elsif product.tags contains 'new' -%}
+        <span class="product-badge new">New</span>
+      {%- endif -%}
+
+      <h1 class="product-page-title">{{ product.title }}</h1>
+
+      <div class="product-page-price">
+        {%- if product.compare_at_price > product.price -%}
+          <span class="price-was">{{ product.compare_at_price | money }}</span>
+          <span class="price-sale">{{ product.price | money }}</span>
+        {%- else -%}
+          <span>{{ product.price | money }}</span>
+        {%- endif -%}
+      </div>
+
+      {%- assign heat = product.metafields.brasa.heat_level | plus: 0 -%}
+      {%- if heat > 0 -%}
+        <div class="heat-bar" style="margin: 0 0 28px;">
+          <span class="heat-label">Heat Level</span>
+          <div class="heat-dots">
+            {%- for i in (1..5) -%}
+              <span class="heat-dot{% if i <= heat %} active{% endif %}"></span>
+            {%- endfor -%}
+          </div>
+          <span class="heat-text">{{ product.metafields.brasa.heat_label }}</span>
+        </div>
+      {%- endif -%}
+
+      <div class="product-page-desc">{{ product.description }}</div>
+
+      <form action="{{ routes.cart_add_url }}" method="post" id="product-form">
+        <input type="hidden" name="form_type" value="product" />
+        <input type="hidden" name="utf8" value="✓" />
+
+        {%- if product.has_only_default_variant == false -%}
+          {%- for option in product.options_with_values -%}
+            <div class="variant-group">
+              <label class="variant-label">{{ option.name }}</label>
+              <div class="variant-options">
+                {%- for value in option.values -%}
+                  <button
+                    type="button"
+                    class="variant-btn {% if option.selected_value == value %}active{% endif %}"
+                    data-option-index="{{ forloop.parentloop.index0 }}"
+                    data-value="{{ value | escape }}"
+                  >{{ value }}</button>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+
+        <input type="hidden" name="id" id="variant-id" value="{{ product.selected_or_first_available_variant.id }}" />
+        <input type="hidden" name="quantity" value="1" />
+
+        <button
+          type="submit"
+          class="btn-primary btn-add-to-cart"
+          {% unless product.available %}disabled{% endunless %}
+        >
+          {%- if product.available -%}Add to Cart{%- else -%}Sold Out{%- endif -%}
+        </button>
+      </form>
+
+      <div class="product-meta-list">
+        {%- if product.metafields.brasa.ingredients != blank -%}
+          <div class="product-meta-item">
+            <span class="meta-label">Ingredients</span>
+            <span class="meta-value">{{ product.metafields.brasa.ingredients }}</span>
+          </div>
+        {%- endif -%}
+        <div class="product-meta-item">
+          <span class="meta-label">Size</span>
+          <span class="meta-value">{{ product.variants.first.weight | weight_with_unit }}</span>
+        </div>
+        {%- if product.vendor != blank -%}
+          <div class="product-meta-item">
+            <span class="meta-label">Made by</span>
+            <span class="meta-value">{{ product.vendor }}</span>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product",
+  "settings": [],
+  "presets": [
+    { "name": "Product Page" }
+  ]
+}
+{% endschema %}

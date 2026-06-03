@@ -1,0 +1,61 @@
+<header id="site-header">
+  <nav class="left">
+    {%- for link in linklists[section.settings.main_menu].links -%}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    {%- endfor -%}
+  </nav>
+
+  <a href="{{ routes.root_url }}" class="logo">
+    Bra<span>s</span>a
+  </a>
+
+  <nav class="right">
+    <button class="icon-btn" aria-label="Search" onclick="document.querySelector('.search-overlay').classList.toggle('active')">
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+
+    <a href="{{ routes.account_url }}" class="icon-btn" aria-label="Account">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </a>
+
+    <a href="{{ routes.cart_url }}" class="icon-btn" aria-label="Cart" style="position:relative">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      {%- if cart.item_count > 0 -%}
+        <span class="cart-count">{{ cart.item_count }}</span>
+      {%- endif -%}
+    </a>
+  </nav>
+</header>
+
+<!-- Search Overlay -->
+<div class="search-overlay">
+  <button class="search-close" onclick="this.closest('.search-overlay').classList.remove('active')" aria-label="Close search">&times;</button>
+  <form action="{{ routes.search_url }}" method="get" class="search-form" role="search">
+    <input type="hidden" name="type" value="product" />
+    <input
+      class="search-input"
+      type="search"
+      name="q"
+      placeholder="Search for products..."
+      aria-label="Search"
+      autocomplete="off"
+    />
+    <button type="submit" class="search-submit">
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+  </form>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "main_menu",
+      "label": "Main menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

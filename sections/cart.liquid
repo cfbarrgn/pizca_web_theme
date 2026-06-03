@@ -1,0 +1,73 @@
+<section class="cart-page">
+  <div class="cart-page-inner">
+    <h1 class="static-page-title">Your Cart</h1>
+
+    {%- if cart.item_count == 0 -%}
+      <div class="cart-empty">
+        <p>Your cart is empty.</p>
+        <a href="{{ routes.all_products_collection_url }}" class="btn-primary">Shop Now</a>
+      </div>
+    {%- else -%}
+      <form action="{{ routes.cart_url }}" method="post" id="cart-form">
+        <div class="cart-items">
+          {%- for item in cart.items -%}
+            <div class="cart-item">
+              <a href="{{ item.url }}" class="cart-item-img-wrap">
+                <img
+                  src="{{ item.image | img_url: '120x150', crop: 'center' }}"
+                  alt="{{ item.image.alt | escape }}"
+                  width="120" height="150"
+                  loading="lazy"
+                />
+              </a>
+              <div class="cart-item-details">
+                <a href="{{ item.url }}" class="cart-item-title">{{ item.title }}</a>
+                {%- unless item.variant.title == 'Default Title' -%}
+                  <p class="cart-item-variant">{{ item.variant.title }}</p>
+                {%- endunless -%}
+                <div class="cart-item-qty">
+                  <button type="button" class="qty-btn" data-line="{{ forloop.index }}" data-change="-1">−</button>
+                  <input
+                    type="number"
+                    name="updates[]"
+                    value="{{ item.quantity }}"
+                    min="0"
+                    class="qty-input"
+                    data-index="{{ forloop.index }}"
+                    aria-label="Quantity for {{ item.title }}"
+                  />
+                  <button type="button" class="qty-btn" data-line="{{ forloop.index }}" data-change="1">+</button>
+                </div>
+              </div>
+              <div class="cart-item-price">{{ item.line_price | money }}</div>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        <div class="cart-footer">
+          <div class="cart-totals">
+            <div class="cart-subtotal-row">
+              <span>Subtotal</span>
+              <span class="cart-subtotal-price">{{ cart.total_price | money }}</span>
+            </div>
+            <p class="cart-shipping-note">Shipping and taxes calculated at checkout</p>
+          </div>
+          <div class="cart-actions">
+            <button type="submit" name="update" class="btn-ghost">Update Cart</button>
+            <a href="{{ routes.checkout }}" class="btn-primary">Checkout</a>
+          </div>
+        </div>
+      </form>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": [],
+  "presets": [
+    { "name": "Cart Page" }
+  ]
+}
+{% endschema %}

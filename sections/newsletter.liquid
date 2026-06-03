@@ -1,0 +1,63 @@
+<section class="newsletter">
+  <div class="newsletter-content">
+    <h2>{{ section.settings.title }}</h2>
+    <p>{{ section.settings.description }}</p>
+
+    {%- form 'customer', id: 'newsletter-form' -%}
+      <input type="hidden" name="contact[tags]" value="newsletter" />
+      {%- if form.posted_successfully? -%}
+        <p class="newsletter-success">🌶 You're in. Stay fired up.</p>
+      {%- else -%}
+        <div class="newsletter-form">
+          <input
+            class="newsletter-input"
+            type="email"
+            name="contact[email]"
+            placeholder="{{ section.settings.placeholder }}"
+            required
+            aria-label="Email address"
+          />
+          <button type="submit" class="newsletter-btn">{{ section.settings.button_label }}</button>
+        </div>
+        {%- if form.errors -%}
+          <p class="newsletter-error">{{ form.errors | default_errors }}</p>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Get Fired Up"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Subtext",
+      "default": "New batches, recipes, and store drops — straight to your inbox. No spam. Just heat."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Input placeholder",
+      "default": "your@email.com"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Join"
+    }
+  ],
+  "presets": [
+    { "name": "Newsletter" }
+  ]
+}
+{% endschema %}

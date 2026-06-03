@@ -1,0 +1,120 @@
+<section id="cookbook" class="cookbook">
+  <div class="cookbook-head">
+    <p class="section-eyebrow">{{ section.settings.eyebrow }}</p>
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+  </div>
+
+  <div class="recipes-grid">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'recipe' -%}
+        <div class="recipe-card reveal" {{ block.shopify_attributes }}>
+          <div class="recipe-img">
+            {%- if block.settings.image -%}
+              <img
+                src="{{ block.settings.image | img_url: '800x600', crop: 'center' }}"
+                alt="{{ block.settings.image.alt | escape }}"
+                width="800" height="600"
+                loading="lazy"
+                class="recipe-img-tag"
+              />
+            {%- else -%}
+              <div class="recipe-img-placeholder r{{ forloop.index }}">
+                <span class="recipe-tag">{{ block.settings.tag }}</span>
+              </div>
+            {%- endif -%}
+            {%- if block.settings.image and block.settings.tag != blank -%}
+              <span class="recipe-tag">{{ block.settings.tag }}</span>
+            {%- endif -%}
+          </div>
+          <div class="recipe-info">
+            <div class="recipe-meta">{{ block.settings.time }} &nbsp;&middot;&nbsp; {{ block.settings.meal_type }}</div>
+            <div class="recipe-name">{{ block.settings.name }}</div>
+            {%- if block.settings.preview != blank -%}
+              <div class="recipe-preview">{{ block.settings.preview }}</div>
+            {%- endif -%}
+            {%- if block.settings.link_url != blank -%}
+              <a href="{{ block.settings.link_url }}" class="recipe-link">Get the Recipe</a>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cookbook",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Cookbook"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Cook with Brasa"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "recipe",
+      "name": "Recipe",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Recipe image"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag (e.g. Featured, Quick)",
+          "default": "Featured Recipe"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Recipe name",
+          "default": "Chile Oil Fried Eggs"
+        },
+        {
+          "type": "text",
+          "id": "time",
+          "label": "Time",
+          "default": "15 min"
+        },
+        {
+          "type": "text",
+          "id": "meal_type",
+          "label": "Meal type",
+          "default": "Breakfast"
+        },
+        {
+          "type": "textarea",
+          "id": "preview",
+          "label": "Short description"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Recipe page URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cookbook",
+      "blocks": [
+        { "type": "recipe", "settings": { "name": "Chile Oil Fried Eggs with Crispy Shallots", "time": "15 min", "meal_type": "Breakfast", "tag": "Featured Recipe" } },
+        { "type": "recipe", "settings": { "name": "Seared Scallops, Verde Oil & Corn", "time": "30 min", "meal_type": "Dinner", "tag": "Quick" } },
+        { "type": "recipe", "settings": { "name": "Chile Oil Focaccia with Whipped Ricotta", "time": "45 min", "meal_type": "Snacks", "tag": "Weekend" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

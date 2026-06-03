@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>
+    {{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}
+    {% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}
+    {% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  <link rel="canonical" href="{{ canonical_url }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  {{ content_for_header }}
+
+  {{ 'pizca.css' | asset_url | stylesheet_tag }}
+</head>
+<body>
+
+  {%- if settings.announcement_text != blank -%}
+    <div class="announcement">{{ settings.announcement_text }}</div>
+  {%- endif -%}
+
+  {% section 'header' %}
+
+  <main id="main-content">
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'footer' %}
+
+  {{ 'pizca.js' | asset_url | script_tag }}
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<section class="static-page">
+  <div class="static-page-inner">
+    <h1 class="static-page-title">{{ page.title }}</h1>
+    <div class="static-page-content rte">
+      {{ page.content }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page",
+  "settings": [],
+  "presets": [
+    { "name": "Page Content" }
+  ]
+}
+{% endschema %}

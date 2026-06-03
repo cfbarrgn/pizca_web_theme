@@ -1,0 +1,168 @@
+<section class="hero">
+  <div class="hero-media">
+    {%- if section.settings.hero_image -%}
+      <img
+        src="{{ section.settings.hero_image | img_url: '1400x' }}"
+        alt="{{ section.settings.hero_image.alt | escape }}"
+        class="hero-image-tag"
+        width="700"
+        height="900"
+        loading="eager"
+      />
+    {%- else -%}
+      <div class="hero-img-placeholder">
+        <span class="img-credit">{{ section.settings.image_caption }}</span>
+      </div>
+    {%- endif -%}
+    <div class="hero-deco-number">{{ shop.name | upcase }}</div>
+  </div>
+
+  <div class="hero-content">
+    {%- if section.settings.badge_text != blank -%}
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span>{{ section.settings.badge_text }}</span>
+      </div>
+    {%- endif -%}
+
+    <h1 class="hero-title">
+      <span class="outline">{{ section.settings.title_line1 }}</span><br>
+      <em>{{ section.settings.title_line2 }}</em><br>
+      {{ section.settings.title_line3 }}<br>
+      {{ section.settings.title_line4 }}
+    </h1>
+
+    {%- if section.settings.tagline != blank -%}
+      <p class="hero-tagline">{{ section.settings.tagline }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.description != blank -%}
+      <p class="hero-desc">{{ section.settings.description }}</p>
+    {%- endif -%}
+
+    <div class="btn-group">
+      {%- if section.settings.cta_primary_label != blank -%}
+        <a href="{{ section.settings.cta_primary_url }}" class="btn-primary">
+          {{ section.settings.cta_primary_label }}
+        </a>
+      {%- endif -%}
+      {%- if section.settings.cta_secondary_label != blank -%}
+        <a href="{{ section.settings.cta_secondary_url }}" class="btn-ghost">
+          {{ section.settings.cta_secondary_label }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="heat-bar">
+      <span class="heat-label">Heat Level</span>
+      <div class="heat-dots">
+        {%- assign heat = section.settings.heat_level | plus: 0 -%}
+        {%- for i in (1..5) -%}
+          <span class="heat-dot{% if i <= heat %} active{% endif %}"></span>
+        {%- endfor -%}
+      </div>
+      <span class="heat-text">{{ section.settings.heat_label }}</span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    },
+    {
+      "type": "text",
+      "id": "image_caption",
+      "label": "Image caption",
+      "default": "Campaign — Oaxaca 2025"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "Small Batch · Oaxaca, MX"
+    },
+    {
+      "type": "text",
+      "id": "title_line1",
+      "label": "Title line 1 (outline style)",
+      "default": "Slow"
+    },
+    {
+      "type": "text",
+      "id": "title_line2",
+      "label": "Title line 2 (italic + color)",
+      "default": "Fire,"
+    },
+    {
+      "type": "text",
+      "id": "title_line3",
+      "label": "Title line 3",
+      "default": "Deep"
+    },
+    {
+      "type": "text",
+      "id": "title_line4",
+      "label": "Title line 4",
+      "default": "Flavor"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Italic tagline",
+      "default": "Chile in oil. Made the old way."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description paragraph",
+      "default": "Hand-toasted chiles, single-origin olive oil, and nothing else that doesn't belong. Each batch takes three days. Every jar is worth it."
+    },
+    {
+      "type": "text",
+      "id": "cta_primary_label",
+      "label": "Primary button label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "cta_primary_url",
+      "label": "Primary button URL"
+    },
+    {
+      "type": "text",
+      "id": "cta_secondary_label",
+      "label": "Secondary button label",
+      "default": "Our Story"
+    },
+    {
+      "type": "url",
+      "id": "cta_secondary_url",
+      "label": "Secondary button URL"
+    },
+    {
+      "type": "range",
+      "id": "heat_level",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Heat level (dots)",
+      "default": 3
+    },
+    {
+      "type": "text",
+      "id": "heat_label",
+      "label": "Heat level label",
+      "default": "Medium-Hot"
+    }
+  ],
+  "presets": [
+    { "name": "Hero Banner" }
+  ]
+}
+{% endschema %}

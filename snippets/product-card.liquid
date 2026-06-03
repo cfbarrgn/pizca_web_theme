@@ -1,0 +1,67 @@
+<div class="product-card reveal">
+  <div class="product-img-wrap">
+    {%- if product.featured_image -%}
+      <img
+        src="{{ product.featured_image | img_url: '600x750', crop: 'center' }}"
+        alt="{{ product.featured_image.alt | escape }}"
+        class="product-img"
+        width="600"
+        height="750"
+        loading="lazy"
+      />
+    {%- else -%}
+      <div class="product-img-placeholder bg-original">
+        <div class="jar-wrap">
+          <div class="jar j-original">
+            <div class="jar-lid"></div>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if product.available == false -%}
+      <span class="product-badge sold">Sold Out</span>
+    {%- elsif product.tags contains 'new' -%}
+      <span class="product-badge new">New</span>
+    {%- elsif product.tags contains 'best-seller' -%}
+      <span class="product-badge">Best Seller</span>
+    {%- endif -%}
+
+    <form action="{{ routes.cart_add_url }}" method="post" class="quick-add-form">
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
+      <input type="hidden" name="quantity" value="1" />
+      <button type="submit" class="product-quick-add">
+        + Add to Cart
+      </button>
+    </form>
+  </div>
+
+  <div class="product-info">
+    <a href="{{ product.url }}" class="product-name-link">
+      <div class="product-name">{{ product.title }}</div>
+    </a>
+    {%- if product.metafields.brasa.short_description != blank -%}
+      <div class="product-desc">{{ product.metafields.brasa.short_description }}</div>
+    {%- elsif product.description != blank -%}
+      <div class="product-desc">{{ product.description | strip_html | truncate: 100 }}</div>
+    {%- endif -%}
+    <div class="product-foot">
+      <div class="product-price">
+        {%- if product.compare_at_price > product.price -%}
+          <span class="price-was">{{ product.compare_at_price | money }}</span>
+          <span class="price-sale">{{ product.price | money }}</span>
+        {%- else -%}
+          {{ product.price | money }}
+        {%- endif -%}
+      </div>
+      {%- assign heat = product.metafields.brasa.heat_level | plus: 0 -%}
+      {%- if heat > 0 -%}
+        <div class="heat-mini">
+          {%- for i in (1..5) -%}
+            <span class="hm{% if i <= heat %} on{% endif %}"></span>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
