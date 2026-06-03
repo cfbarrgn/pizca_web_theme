@@ -24,18 +24,18 @@
       "hero": {
         "type": "hero",
         "settings": {
-          "image_caption": "Campaign — Oaxaca 2025",
-          "badge_text": "Small Batch · Oaxaca, MX",
-          "title_line1": "Slow",
-          "title_line2": "Fire,",
+          "image_caption": "",
+          "badge_text": "Small Batch · Michigan USA",
+          "title_line1": "Simple",
+          "title_line2": "Ingredients,",
           "title_line3": "Deep",
           "title_line4": "Flavor",
-          "tagline": "Chile in oil. Made the old way.",
-          "description": "Hand-toasted chiles, single-origin olive oil, and nothing else that doesn't belong. Each batch takes three days. Every jar is worth it.",
+          "tagline": "Chile in oil. Made the traditional way.",
+          "description": "Hand-toasted chiles, and nothing else that doesn't belong. Each batch is made by hand. Every jar is worth it.",
           "cta_primary_label": "Shop Now",
           "cta_primary_url": "",
           "cta_secondary_label": "Our Story",
-          "cta_secondary_url": "",
+          "cta_secondary_url": "shopify://pages/our-story",
           "heat_level": 3,
           "heat_label": "Medium-Hot"
         }
@@ -43,7 +43,7 @@
       "marquee": {
         "type": "marquee",
         "settings": {
-          "marquee_text": "Hand-Toasted Chiles | Small Batch | Single-Origin Olive Oil | No Preservatives | Oaxaca, Mexico"
+          "marquee_text": "Hand-Toasted Chiles | Small Batch | Hand-harvested Mexican Sea Salt | Fresh Garlic | No Preservatives | Made in Michigan"
         }
       },
       "featured-products": {
@@ -58,10 +58,10 @@
       "our-story": {
         "type": "our-story",
         "settings": {
-          "image_caption": "Tlacolula Market, Oaxaca",
+          "image_caption": "",
           "eyebrow": "Our Story",
-          "title": "Born in a Mercado",
-          "body_text": "<p>It started with a jar we couldn't stop eating. A grandmother's recipe, passed between market stalls in Tlacolula. We asked, she taught us, and we've never cooked the same way since.</p><p>Every batch of Brasa starts with chiles sourced from the same valley farms, toasted over wood fire, and slow-steeped in oil for 72 hours. No shortcuts. No additives. Just what's been working for centuries.</p>"
+          "title": "Born in Mexico",
+          "body_text": "<p>Pizca Chile is a Michigan-based company born out of a passion for sharing a beloved, traditional Mexican chile in oil recipe that has been treasured for generations. The recipe made its way to America and was shared with a close circle of friends — and after one taste, everyone agreed that the incredible, incomparable flavor of Pizca Chile was simply too good to keep to themselves!</p><p>Pizca Chile is a real food condiment made with love! Our Mexican chile in oil is crafted in small batches using quality, wholesome ingredients that promote health and great flavor. Oil separation is completely natural, so give your chile a good stir before each use. No refrigeration needed — though if you enjoy it cold, that works too!</p>"
         }
       },
       "cookbook": {
@@ -101,8 +101,8 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "tagline": "Chile in oil. Made the old way.",
-          "description": "Small batch, hand-crafted chile oils made in Oaxaca, Mexico. No preservatives. No shortcuts. Just fire."
+          "tagline": "Chile in oil. Made the traditional way.",
+          "description": "Small batch, hand-crafted chile in oil made in Michigan, USA. No preservatives. No shortcuts. Just flavorful fire."
         }
       }
     },
