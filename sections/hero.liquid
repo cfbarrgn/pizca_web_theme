@@ -2,7 +2,7 @@
   <div class="hero-media">
     {%- if section.settings.hero_image -%}
       <img
-        src="{{ section.settings.hero_image | img_url: '1400x' }}"
+        src="{{ section.settings.hero_image | image_url: '1400x' }}"
         alt="{{ section.settings.hero_image.alt | escape }}"
         class="hero-image-tag"
         width="700"
@@ -79,25 +79,25 @@
       "type": "text",
       "id": "image_caption",
       "label": "Image caption",
-      "default": "Campaign — Oaxaca 2025"
+      "default": ""
     },
     {
       "type": "text",
       "id": "badge_text",
       "label": "Badge text",
-      "default": "Small Batch · Oaxaca, MX"
+      "default": "Small Batch · Michigan, USA"
     },
     {
       "type": "text",
       "id": "title_line1",
       "label": "Title line 1 (outline style)",
-      "default": "Slow"
+      "default": "Simple"
     },
     {
       "type": "text",
       "id": "title_line2",
       "label": "Title line 2 (italic + color)",
-      "default": "Fire,"
+      "default": "Ingredients,"
     },
     {
       "type": "text",
@@ -115,13 +115,13 @@
       "type": "text",
       "id": "tagline",
       "label": "Italic tagline",
-      "default": "Chile in oil. Made the old way."
+      "default": "Chile in oil. Made the traditional way."
     },
     {
       "type": "textarea",
       "id": "description",
       "label": "Description paragraph",
-      "default": "Hand-toasted chiles, single-origin olive oil, and nothing else that doesn't belong. Each batch takes three days. Every jar is worth it."
+      "default": "Hand-toasted chiles, fresh garlic and nothing else that doesn't belong. Each batch is made by hand. Every jar is worth it."
     },
     {
       "type": "text",

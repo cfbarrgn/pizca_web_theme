@@ -33,13 +33,13 @@
 
   {% section 'header' %}
 
-  <main id="main-content">
+  <main id="main-content">ß
     {{ content_for_layout }}
   </main>
 
   {% section 'footer' %}
 
-  {{ 'pizca.js' | asset_url | script_tag }}
+  <script src="{{ 'pizca.js' | asset_url }}" defer></script>
 
 </body>
 </html>
