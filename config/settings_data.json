@@ -18,7 +18,8 @@
       "header": {
         "type": "header",
         "settings": {
-          "main_menu": "main-menu"
+          "main_menu": "main-menu",
+          "logo_image": "shopify://shop_images/Home-pag-logo-400x352.png"
         }
       },
       "hero": {
