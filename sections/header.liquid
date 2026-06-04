@@ -6,7 +6,18 @@
   </nav>
 
   <a href="{{ routes.root_url }}" class="logo">
-    PI<span>Z</span>CA
+    {%- if section.settings.logo_image != blank -%}
+      <img
+        src="{{ section.settings.logo_image | image_url: width: 300 }}"
+        alt="{{ section.settings.logo_image.alt | default: shop.name | escape }}"
+        class="logo-image-tag"
+        width="{{ section.settings.logo_image.width }}"
+        height="{{ section.settings.logo_image.height }}"
+        loading="eager"
+      />
+    {%- else -%}
+      {{ shop.name }}
+    {%- endif -%}
   </a>
 
   <nav class="right">
@@ -55,7 +66,12 @@
       "id": "main_menu",
       "label": "Main menu",
       "default": "main-menu"
-    }
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo image"
+    },
   ]
 }
 {% endschema %}
