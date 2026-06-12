@@ -2,7 +2,7 @@
   <div class="product-img-wrap">
     {%- if product.featured_image -%}
       <img
-        src="{{ product.featured_image | img_url: '600x750', crop: 'center' }}"
+        src="{{ product.featured_image | image_url: '600x750', crop: 'center' }}"
         alt="{{ product.featured_image.alt | escape }}"
         class="product-img"
         width="600"
@@ -40,8 +40,8 @@
     <a href="{{ product.url }}" class="product-name-link">
       <div class="product-name">{{ product.title }}</div>
     </a>
-    {%- if product.metafields.brasa.short_description != blank -%}
-      <div class="product-desc">{{ product.metafields.brasa.short_description }}</div>
+    {%- if product.metafields.pizca.short_description != blank -%}
+      <div class="product-desc">{{ product.metafields.pizca.short_description }}</div>
     {%- elsif product.description != blank -%}
       <div class="product-desc">{{ product.description | strip_html | truncate: 100 }}</div>
     {%- endif -%}
@@ -54,7 +54,7 @@
           {{ product.price | money }}
         {%- endif -%}
       </div>
-      {%- assign heat = product.metafields.brasa.heat_level | plus: 0 -%}
+      {%- assign heat = product.metafields.pizca.heat_level | plus: 0 -%}
       {%- if heat > 0 -%}
         <div class="heat-mini">
           {%- for i in (1..5) -%}

@@ -43,7 +43,7 @@
         {%- endif -%}
       </div>
 
-      {%- assign heat = product.metafields.brasa.heat_level | plus: 0 -%}
+      {%- assign heat = product.metafields.pizca.heat_level | plus: 0 -%}
       {%- if heat > 0 -%}
         <div class="heat-bar" style="margin: 0 0 28px;">
           <span class="heat-label">Heat Level</span>
@@ -52,7 +52,7 @@
               <span class="heat-dot{% if i <= heat %} active{% endif %}"></span>
             {%- endfor -%}
           </div>
-          <span class="heat-text">{{ product.metafields.brasa.heat_label }}</span>
+          <span class="heat-text">{{ product.metafields.pizca.heat_label }}</span>
         </div>
       {%- endif -%}
 
@@ -93,10 +93,10 @@
       </form>
 
       <div class="product-meta-list">
-        {%- if product.metafields.brasa.ingredients != blank -%}
+        {%- if product.metafields.pizca.ingredients != blank -%}
           <div class="product-meta-item">
             <span class="meta-label">Ingredients</span>
-            <span class="meta-value">{{ product.metafields.brasa.ingredients }}</span>
+            <span class="meta-value">{{ product.metafields.pizca.ingredients }}</span>
           </div>
         {%- endif -%}
         <div class="product-meta-item">
