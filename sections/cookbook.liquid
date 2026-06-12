@@ -11,7 +11,7 @@
           <div class="recipe-img">
             {%- if block.settings.image -%}
               <img
-                src="{{ block.settings.image | img_url: '800x600', crop: 'center' }}"
+                src="{{ block.settings.image | image_url: '800x600', crop: 'center' }}"
                 alt="{{ block.settings.image.alt | escape }}"
                 width="800" height="600"
                 loading="lazy"
@@ -56,7 +56,7 @@
       "type": "text",
       "id": "title",
       "label": "Section title",
-      "default": "Cook with Brasa"
+      "default": "Cook with Pizca"
     }
   ],
   "blocks": [
