@@ -2,10 +2,11 @@
   <div class="story-media">
     {%- if section.settings.image -%}
       <img
-        src="{{ section.settings.image | img_url: '900x' }}"
+        src="{{ section.settings.image | image_url: "700x900"}}"
         alt="{{ section.settings.image.alt | escape }}"
         class="story-img-tag"
-        width="900"
+        width="700"
+        height="900"
         loading="lazy"
       />
     {%- else -%}
@@ -52,7 +53,7 @@
       "type": "text",
       "id": "image_caption",
       "label": "Image caption",
-      "default": "Tlacolula Market, Oaxaca"
+      "default": "Michigan, USA"
     },
     {
       "type": "text",
@@ -64,13 +65,13 @@
       "type": "text",
       "id": "title",
       "label": "Section title",
-      "default": "Born in a Mercado"
+      "default": "Born in Mexico"
     },
     {
       "type": "richtext",
       "id": "body_text",
       "label": "Story body text",
-      "default": "<p>It started with a jar we couldn't stop eating. A grandmother's recipe, passed between market stalls in Tlacolula. We asked, she taught us, and we've never cooked the same way since.</p><p>Every batch of Brasa starts with chiles sourced from the same valley farms, toasted over wood fire, and slow-steeped in oil for 72 hours. No shortcuts. No additives. Just what's been working for centuries.</p>"
+      "default": "<p>Pizca Chile is a Michigan-based company born out of a passion for sharing a beloved, traditional Mexican chile in oil recipe that has been treasured for generations.</p><p>Pizca Chile is a real food condiment made with love! Our Mexican chile in oil is crafted in small batches using quality, wholesome ingredients that promote health and great flavor. .</p>"
     }
   ],
   "blocks": [
