@@ -110,7 +110,7 @@ header.scrolled { box-shadow: 0 4px 40px rgba(0,0,0,0.4); }
 .header-left { display: flex; align-items: center; gap: 36px; }
 nav.left  { display: flex; gap: 36px; }
 nav.right { display: flex; gap: 20px; align-items: center; justify-content: flex-end; }
-nav a { font-size: 15px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; color: var(--color-dark-earth); text-decoration: none; transition: color 0.25s; }
+nav a { font-size: 15px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; color: var( --color-tobacco); text-decoration: none; transition: color 0.25s; }
 nav a:hover { color: var(--gold-light); }
 .logo { text-align: center; font-family: var(--font-display); font-weight: 400; font-size: 30px; letter-spacing: 0.08em; color: var(--color-crema); text-decoration: none; line-height: 1; }
 .logo span { color: var(--color-chile-red); font-style: italic; }
