@@ -77,6 +77,58 @@
       "stores": {
         "type": "stores",
         "blocks": {
+          "store_BatyfK": {
+            "type": "store",
+            "settings": {
+              "city": "Village of Clarkston",
+              "country": "USA",
+              "label": "Meijer Independence Market",
+              "address": "5820 Waldon Rd, Village of Clarkston, MI 48346",
+              "hours": "",
+              "lat": "42.73480159801353",
+              "lng": "-83.38273644389393",
+              "map_url": ""
+            }
+          },
+          "store_MrMTzB": {
+            "type": "store",
+            "settings": {
+              "city": "Detroit",
+              "country": "USA",
+              "label": "Honey Bee Market – La Colmena",
+              "address": "2443 Bagley St, Detroit, MI 48216",
+              "hours": "Mon–Sat 9am–7pm · Sun 10am–4pm",
+              "lat": "42.325618675175036",
+              "lng": "-83.07649568809575",
+              "map_url": "https://maps.app.goo.gl/VnCnjXEXbyArmn3a7"
+            }
+          },
+          "store_enK4mf": {
+            "type": "store",
+            "settings": {
+              "city": "Madison Heights",
+              "country": "USA",
+              "label": "Taco Tienda Mexicana",
+              "address": "31642 John R Rd, Madison Heights, MI 48071",
+              "hours": "Mon–Sat 9am–7pm · Sun 10am–4pm",
+              "lat": "42.526450261310586",
+              "lng": "-83.1057444745945",
+              "map_url": "https://maps.app.goo.gl/Jccby8qwy2K8LpKZ7"
+            }
+          },
+          "store_kwVcLt": {
+            "type": "store",
+            "settings": {
+              "city": "Oxford",
+              "country": "USA",
+              "label": "Señoritas Mexican Restaurant",
+              "address": "48758 Van Dyke Ave, Shelby Township, MI 48317",
+              "hours": "",
+              "lat": "42.65359800786373",
+              "lng": "-83.0329761476057",
+              "map_url": "https://maps.app.goo.gl/wU6QJCXy8RVP8HWv6"
+            }
+          },
           "store_xUEETd": {
             "type": "store",
             "settings": {
@@ -92,6 +144,10 @@
           }
         },
         "block_order": [
+          "store_BatyfK",
+          "store_MrMTzB",
+          "store_enK4mf",
+          "store_kwVcLt",
           "store_xUEETd"
         ],
         "settings": {
