@@ -47,7 +47,7 @@
         </a>
       {%- endif -%}
       {%- if section.settings.cta_secondary_label != blank -%}
-        <a href="{{ section.settings.cta_secondary_url }}" class="btn-ghost">
+        <a href="#story" class="btn-ghost">
           {{ section.settings.cta_secondary_label }}
         </a>
       {%- endif -%}
@@ -139,11 +139,6 @@
       "id": "cta_secondary_label",
       "label": "Secondary button label",
       "default": "Our Story"
-    },
-    {
-      "type": "url",
-      "id": "cta_secondary_url",
-      "label": "Secondary button URL"
     },
     {
       "type": "range",
