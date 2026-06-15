@@ -76,6 +76,164 @@
       },
       "stores": {
         "type": "stores",
+        "blocks": {
+          "store_JiYWCV": {
+            "type": "store",
+            "settings": {
+              "city": "Village of Clarkston",
+              "country": "USA",
+              "label": "Neiman's Family Market",
+              "address": "7121 Dixie Hwy, Village of Clarkston, MI 48346",
+              "hours": "Mon–Sun 6am–8pm",
+              "lat": "42.722956072259024",
+              "lng": "-83.42815331876595",
+              "map_url": "https://maps.app.goo.gl/XA2wNpnKZqqwAUbMA"
+            }
+          },
+          "store_JzWWAH": {
+            "type": "store",
+            "settings": {
+              "city": "Detroit",
+              "country": "USA",
+              "label": "Algo Especial Super Market",
+              "address": "2628 Bagley St, Detroit, MI 48216",
+              "hours": "Mon–Sun 9am–5pm · Tue Closed",
+              "lat": "42.32567244283664",
+              "lng": "-83.07873313227707",
+              "map_url": "https://maps.app.goo.gl/thxnPt69UnYa9UnU8"
+            }
+          },
+          "store_794Mnr": {
+            "type": "store",
+            "settings": {
+              "city": "Waterford Township",
+              "country": "USA",
+              "label": "Motor City Tacos",
+              "address": "4530 Elizabeth Lake Rd, Waterford Township, MI 48328",
+              "hours": "Tue–Sat 10am–9pm · Sun 10am–5pm",
+              "lat": "42.63930616091398",
+              "lng": "-83.37700313226135",
+              "map_url": "https://maps.app.goo.gl/ad5i16u66iQoN6pq7"
+            }
+          },
+          "store_cy9dpA": {
+            "type": "store",
+            "settings": {
+              "city": "Royal Oak",
+              "country": "USA",
+              "label": "Holiday Market",
+              "address": "1203 S Main St, Royal Oak, MI 48067",
+              "hours": "Mon–Sun 8am–8pm",
+              "lat": "42.47919380214446",
+              "lng": "-83.14291820290818",
+              "map_url": "https://maps.app.goo.gl/qokBTBfXAPow9gzY9"
+            }
+          },
+          "store_ebDAtU": {
+            "type": "store",
+            "settings": {
+              "city": "Oxford",
+              "country": "USA",
+              "label": "Harvest Time Farm Market",
+              "address": "1125 S Lapeer Rd, Oxford, MI 48371",
+              "hours": "Mon–Sat 9am–7pm · Sun 9am–6pm",
+              "lat": "42.809353320540495",
+              "lng": "-83.24976010830835",
+              "map_url": "https://maps.app.goo.gl/CRwyYLzH2gZasrJC7"
+            }
+          },
+          "store_KaXjEH": {
+            "type": "store",
+            "settings": {
+              "city": "Plymouth",
+              "country": "USA",
+              "label": "Picnic Basket",
+              "address": "49471 Ann Arbor Rd, Plymouth, MI 48170",
+              "hours": "Mon–Sat 7am–9pm · Sun 8am–8pm",
+              "lat": "42.35341330152846",
+              "lng": "-83.52848047460313",
+              "map_url": "https://maps.app.goo.gl/tQ8Z8pLU6HKaVvkz5"
+            }
+          },
+          "store_BatyfK": {
+            "type": "store",
+            "settings": {
+              "city": "Village of Clarkston",
+              "country": "USA",
+              "label": "Meijer Independence Market",
+              "address": "5820 Waldon Rd, Village of Clarkston, MI 48346",
+              "hours": "",
+              "lat": "42.73480159801353",
+              "lng": "-83.38273644389393",
+              "map_url": ""
+            }
+          },
+          "store_MrMTzB": {
+            "type": "store",
+            "settings": {
+              "city": "Detroit",
+              "country": "USA",
+              "label": "Honey Bee Market – La Colmena",
+              "address": "2443 Bagley St, Detroit, MI 48216",
+              "hours": "Mon–Sat 9am–7pm · Sun 10am–4pm",
+              "lat": "42.325618675175036",
+              "lng": "-83.07649568809575",
+              "map_url": "https://maps.app.goo.gl/VnCnjXEXbyArmn3a7"
+            }
+          },
+          "store_enK4mf": {
+            "type": "store",
+            "settings": {
+              "city": "Madison Heights",
+              "country": "USA",
+              "label": "Taco Tienda Mexicana",
+              "address": "31642 John R Rd, Madison Heights, MI 48071",
+              "hours": "Mon–Sat 9am–7pm · Sun 10am–4pm",
+              "lat": "42.526450261310586",
+              "lng": "-83.1057444745945",
+              "map_url": "https://maps.app.goo.gl/Jccby8qwy2K8LpKZ7"
+            }
+          },
+          "store_kwVcLt": {
+            "type": "store",
+            "settings": {
+              "city": "Oxford",
+              "country": "USA",
+              "label": "Señoritas Mexican Restaurant",
+              "address": "48758 Van Dyke Ave, Shelby Township, MI 48317",
+              "hours": "",
+              "lat": "42.65359800786373",
+              "lng": "-83.0329761476057",
+              "map_url": "https://maps.app.goo.gl/wU6QJCXy8RVP8HWv6"
+            }
+          },
+          "store_xUEETd": {
+            "type": "store",
+            "settings": {
+              "city": "Pontiac",
+              "country": "USA",
+              "label": "Carnival Market",
+              "address": "1101 Walton Blvd.",
+              "hours": "Mon–Sat 8am–9pm · Sun 8am–8pm",
+              "lat": "42.679221332259054",
+              "lng": "-83.2601076241384",
+              "map_url": "https://maps.app.goo.gl/1DYEPEJmRDLBsQNd6"
+            }
+          }
+        },
+        "block_order": [
+          "store_JiYWCV",
+          "store_JzWWAH",
+          "store_794Mnr",
+          "store_cy9dpA",
+          "store_ebDAtU",
+          "store_KaXjEH",
+          "store_BatyfK",
+          "store_MrMTzB",
+          "store_enK4mf",
+          "store_kwVcLt",
+          "store_xUEETd"
+        ],
         "settings": {
           "eyebrow": "Find Us",
           "title": "In Stores Near You",
