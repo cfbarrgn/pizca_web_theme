@@ -4,6 +4,26 @@
     <h2 class="section-title">{{ section.settings.title }}</h2>
   </div>
 
+  <div id="stores-map-{{ section.id }}" class="stores-map"></div>
+
+  <script type="application/json" id="stores-data-{{ section.id }}">
+    [
+      {%- for block in section.blocks -%}
+        {%- unless forloop.first -%},{%- endunless -%}
+        {
+          "lat": {{ block.settings.lat | json }},
+          "lng": {{ block.settings.lng | json }},
+          "city": {{ block.settings.city | json }},
+          "country": {{ block.settings.country | json }},
+          "label": {{ block.settings.label | json }},
+          "address": {{ block.settings.address | json }},
+          "hours": {{ block.settings.hours | json }},
+          "mapUrl": {{ block.settings.map_url | default: '' | json }}
+        }
+      {%- endfor -%}
+    ]
+  </script>
+
   <div class="stores-grid">
     {%- for block in section.blocks -%}
       {%- if block.type == 'store' -%}
@@ -29,6 +49,86 @@
     </a>
   </div>
 </section>
+
+<script>
+(function () {
+  var LEAFLET_CSS = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+  var LEAFLET_JS  = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+  var sectionId   = {{ section.id | json }};
+
+  function loadCSS(href) {
+    if (document.querySelector('link[href="' + href + '"]')) return;
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
+  }
+
+  function loadScript(src, cb) {
+    if (typeof L !== 'undefined') { cb(); return; }
+    var s = document.createElement('script');
+    s.src = src;
+    s.onload = cb;
+    document.head.appendChild(s);
+  }
+
+  function initMap() {
+    var dataEl = document.getElementById('stores-data-' + sectionId);
+    var mapEl  = document.getElementById('stores-map-' + sectionId);
+    if (!dataEl || !mapEl) return;
+
+    var locations = JSON.parse(dataEl.textContent).filter(function (s) {
+      return s.lat !== null && s.lat !== '' && s.lng !== null && s.lng !== '';
+    });
+
+    if (locations.length === 0) {
+      mapEl.style.display = 'none';
+      return;
+    }
+
+    var map = L.map(mapEl, { scrollWheelZoom: false });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    var markers = locations.map(function (store) {
+      var lines = ['<strong>' + store.city + '</strong>'];
+      if (store.country) {
+        var sub = store.country;
+        if (store.label) sub += ' &middot; ' + store.label;
+        lines.push('<span class="stores-map-sub">' + sub + '</span>');
+      }
+      if (store.address) lines.push(store.address);
+      if (store.hours)   lines.push('<em>' + store.hours + '</em>');
+      if (store.mapUrl)  lines.push('<a href="' + store.mapUrl + '" target="_blank" rel="noopener">Get Directions &rarr;</a>');
+
+      return L.marker([parseFloat(store.lat), parseFloat(store.lng)])
+        .addTo(map)
+        .bindPopup(lines.join('<br>'));
+    });
+
+    map.fitBounds(L.featureGroup(markers).getBounds().pad(0.3));
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (pos) {
+        map.setView([pos.coords.latitude, pos.coords.longitude], 9);
+        L.circleMarker([pos.coords.latitude, pos.coords.longitude], {
+          radius: 8,
+          fillColor: '#c94a1e',
+          color: '#fff',
+          weight: 2,
+          fillOpacity: 0.9
+        }).addTo(map).bindPopup('You are here');
+      });
+    }
+  }
+
+  loadCSS(LEAFLET_CSS);
+  loadScript(LEAFLET_JS, initMap);
+})();
+</script>
 
 {% schema %}
 {
@@ -98,6 +198,18 @@
           "id": "hours",
           "label": "Opening hours",
           "default": "Mon–Sat 9am–7pm · Sun 10am–4pm"
+        },
+        {
+          "type": "text",
+          "id": "lat",
+          "label": "Latitude",
+          "info": "Decimal coordinates — right-click a location in Google Maps and copy the first number (e.g. 17.0732)"
+        },
+        {
+          "type": "text",
+          "id": "lng",
+          "label": "Longitude",
+          "info": "Decimal coordinates — right-click a location in Google Maps and copy the second number (e.g. -96.7266)"
         },
         {
           "type": "url",
