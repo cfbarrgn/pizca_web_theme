@@ -76,6 +76,24 @@
       },
       "stores": {
         "type": "stores",
+        "blocks": {
+          "store_xUEETd": {
+            "type": "store",
+            "settings": {
+              "city": "Pontiac",
+              "country": "USA",
+              "label": "Carnival Market",
+              "address": "1101 Walton Blvd.",
+              "hours": "Mon–Sat 8am–9pm · Sun 8am–8pm",
+              "lat": "42.679221332259054",
+              "lng": "-83.2601076241384",
+              "map_url": "https://maps.app.goo.gl/1DYEPEJmRDLBsQNd6"
+            }
+          }
+        },
+        "block_order": [
+          "store_xUEETd"
+        ],
         "settings": {
           "eyebrow": "Find Us",
           "title": "In Stores Near You",
