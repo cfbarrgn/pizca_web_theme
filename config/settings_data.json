@@ -25,6 +25,7 @@
       "hero": {
         "type": "hero",
         "settings": {
+          "hero_image": "shopify://shop_images/Mexican_Sauce_Ingredients_Label.png",
           "image_caption": "",
           "badge_text": "Small Batch · Michigan USA",
           "title_line1": "Simple",
@@ -59,6 +60,7 @@
       "our-story": {
         "type": "our-story",
         "settings": {
+          "image": "shopify://shop_images/Enhance_Image_for_700x900_Banner.png",
           "image_caption": "",
           "eyebrow": "Our Story",
           "title": "Born in Mexico",
