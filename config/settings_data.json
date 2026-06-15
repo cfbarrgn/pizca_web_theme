@@ -263,8 +263,13 @@
         "type": "footer",
         "settings": {
           "tagline": "Chile in oil. Made the traditional way.",
-          "description": "Small batch, hand-crafted chile in oil made in Michigan, USA. No preservatives. No shortcuts. Just flavorful fire."
+          "description": "Small batch, hand-crafted chile in oil made in Michigan, USA. No preservatives. No shortcuts. Just flavorful fire.",
+          "logo_image": "shopify://shop_images/Home-pag-logo.png"
         }
+      },
+      "collection": {
+        "type": "collection",
+        "settings": {}
       }
     },
     "content_for_index": []
