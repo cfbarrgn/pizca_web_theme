@@ -25,7 +25,8 @@
       "hero": {
         "type": "hero",
         "settings": {
-          "image_caption": "",
+          "hero_image": "shopify://shop_images/Mexican_Sauce_Ingredients_Label.png",
+          "image_caption": "Pizca Chile Deep Flavor",
           "badge_text": "Small Batch · Michigan USA",
           "title_line1": "Simple",
           "title_line2": "Ingredients,",
@@ -59,7 +60,8 @@
       "our-story": {
         "type": "our-story",
         "settings": {
-          "image_caption": "",
+          "image": "shopify://shop_images/Enhance_Image_for_700x900_Banner.png",
+          "image_caption": "Ingredients from Mexico",
           "eyebrow": "Our Story",
           "title": "Born in Mexico",
           "body_text": "<p>Pizca Chile is a Michigan-based company born out of a passion for sharing a beloved, traditional Mexican chile in oil recipe that has been treasured for generations. The recipe made its way to America and was shared with a close circle of friends — and after one taste, everyone agreed that the incredible, incomparable flavor of Pizca Chile was simply too good to keep to themselves!</p><p>Pizca Chile is a real food condiment made with love! Our Mexican chile in oil is crafted in small batches using quality, wholesome ingredients that promote health and great flavor. Oil separation is completely natural, so give your chile a good stir before each use. No refrigeration needed — though if you enjoy it cold, that works too!</p>"
