@@ -409,6 +409,18 @@ nav a:hover { color: var(--gold-light); }
 .store-link { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s; }
 .store-link:hover { gap: 14px; }
 .store-link::after { content: '→'; }
+.stores-map { height: 440px; margin-bottom: 64px; border: 1px solid rgba(200,184,154,0.1); }
+.stores-map .leaflet-popup-content-wrapper { background: var(--charcoal); color: var(--parchment); border-radius: 0; box-shadow: 0 4px 24px rgba(0,0,0,0.4); border: 1px solid rgba(200,184,154,0.15); }
+.stores-map .leaflet-popup-tip { background: var(--charcoal); }
+.stores-map .leaflet-popup-content { font-size: 13px; line-height: 1.8; margin: 14px 18px; }
+.stores-map .leaflet-popup-content strong { font-family: var(--font-display); font-size: 16px; font-weight: 900; display: block; margin-bottom: 2px; }
+.stores-map .leaflet-popup-content .stores-map-sub { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--terra); font-weight: 500; }
+.stores-map .leaflet-popup-content a { color: var(--gold); text-decoration: none; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; }
+.stores-map .leaflet-popup-close-button { color: var(--smoke) !important; }
+.stores-map .leaflet-control-zoom a { background: var(--charcoal); color: var(--parchment); border-color: rgba(200,184,154,0.15); }
+.stores-map .leaflet-control-zoom a:hover { background: var(--terra); color: var(--parchment); border-color: var(--terra); }
+.stores-map .leaflet-control-attribution { background: rgba(30,26,24,0.75); color: var(--smoke); font-size: 10px; }
+.stores-map .leaflet-control-attribution a { color: var(--smoke); }
 .stores-cta { margin-top: 48px; text-align: center; }
 .stores-cta p { font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--smoke); margin-bottom: 24px; }
 .stores-cta p { font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--smoke); margin-bottom: 24px; }
@@ -541,6 +553,7 @@ footer { background: var(--black); color: var(--stone); padding: 72px 64px 40px;
   .cookbook { padding: 64px 24px; }
   .recipes-grid { grid-template-columns: 1fr 1fr; }
   .stores { padding: 64px 24px; }
+  .stores-map { height: 340px; margin-bottom: 48px; }
   .stores-grid { grid-template-columns: 1fr 1fr; }
   .testimonials { padding: 64px 24px; }
   .testimonials-grid { grid-template-columns: 1fr; gap: 20px; }
@@ -556,6 +569,7 @@ footer { background: var(--black); color: var(--stone); padding: 72px 64px 40px;
 @media (max-width: 640px) {
   nav.left { display: none; }
   .recipes-grid { grid-template-columns: 1fr; }
+  .stores-map { height: 260px; margin-bottom: 40px; }
   .stores-grid { grid-template-columns: 1fr; }
   .newsletter-form { flex-direction: column; }
   .newsletter-input { border-right: 1px solid rgba(245,237,224,0.3); border-bottom: none; }
