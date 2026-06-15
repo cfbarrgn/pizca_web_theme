@@ -2,11 +2,11 @@
   <div class="story-media">
     {%- if section.settings.image -%}
       <img
-        src="{{ section.settings.image | image_url: "700x900"}}"
+        src="{{ section.settings.image | image_url: width: 700}}"
         alt="{{ section.settings.image.alt | escape }}"
         class="story-img-tag"
-        width="700"
-        height="900"
+        width="{{ section.settings.image.width }}"
+        height="{{ section.settings.image.height }}"
         loading="lazy"
       />
     {%- else -%}
@@ -14,9 +14,9 @@
         <span class="img-label">{{ section.settings.image_caption }}</span>
       </div>
     {%- endif -%}
-    <div class="story-ring ring1"></div>
-    <div class="story-ring ring2"></div>
-    <div class="story-ring ring3"></div>
+    {% #<div class="story-ring ring1"></div> %}
+    {% #<div class="story-ring ring2"></div> %}
+    {% #<div class="story-ring ring3"></div> %}
   </div>
 
   <div class="story-text">

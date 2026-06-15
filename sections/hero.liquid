@@ -2,11 +2,11 @@
   <div class="hero-media">
     {%- if section.settings.hero_image -%}
       <img
-        src="{{ section.settings.hero_image | image_url: '700x900' }}"
+        src="{{ section.settings.hero_image | image_url: width: 700 }}"
         alt="{{ section.settings.hero_image.alt | escape }}"
         class="hero-image-tag"
-        width="700"
-        height="900"
+        width="{{ section.settings.hero_image.width }}"
+        height="{{ section.settings.hero_image.height }}"
         loading="eager"
       />
     {%- else -%}
@@ -14,7 +14,7 @@
         <span class="img-credit">{{ section.settings.image_caption }}</span>
       </div>
     {%- endif -%}
-    <div class="hero-deco-number">{{ shop.name | upcase }}</div>
+    {% #<div class="hero-deco-number">{{ shop.name | upcase }}</div> %}
   </div>
 
   <div class="hero-content">
