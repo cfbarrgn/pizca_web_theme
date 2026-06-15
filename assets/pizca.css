@@ -116,7 +116,7 @@ nav a:hover { color: var(--gold-light); }
 .logo span { color: var(--color-chile-red); font-style: italic; }
 .logo { text-align: center; font-family: var(--font-display); font-weight: 400; font-size: 30px; letter-spacing: 0.08em; color: var(--color-crema); text-decoration: none; line-height: 1; }
 .logo span { color: var(--color-chile-red); font-style: italic; }
-.icon-btn { background: none; border: none; cursor: pointer; color: var(--stone); padding: 4px; position: relative; transition: color 0.2s; display: inline-flex; }
+.icon-btn { background: none; border: none; cursor: pointer; color: var(--color-tobacco); padding: 4px; position: relative; transition: color 0.2s; display: inline-flex; }
 .icon-btn:hover { color: var(--gold-light); }
 .icon { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.5; }
 .cart-count { position: absolute; top: -4px; right: -6px; background: var(--terra); color: #fff; border-radius: 50%; width: 16px; height: 16px; font-size: 9px; display: flex; align-items: center; justify-content: center; font-weight: 500; }
@@ -187,7 +187,7 @@ nav a:hover { color: var(--gold-light); }
 .hero-badge span { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terra-light); font-weight: 500; }
 .hero-title { font-family: var(--font-display); font-weight: 900; font-size: clamp(54px, 5.5vw, 88px); line-height: 0.95; color: var(--color-dark-earth); margin-bottom: 10px; }
 .hero-title em { font-style: italic; color: var(--terra); display: block; }
-.hero-title .outline { -webkit-text-stroke: 1px var(--stone); color: transparent; }
+.hero-title .outline { -webkit-text-stroke: 1px var(--color-cacao); color: transparent; }
 .hero-tagline { font-family: var(--font-display); font-style: italic; font-size: 16px; color: var(--color-chile-red); margin: 24px 0 32px; letter-spacing: 0.04em; }
 .hero-desc { font-size: 14px; line-height: 1.85; color: var(--smoke); max-width: 360px; margin-bottom: 52px; }
 .btn-group { display: flex; gap: 16px; flex-wrap: wrap; }
