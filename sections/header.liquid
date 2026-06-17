@@ -1,26 +1,28 @@
 <header id="site-header">
-  <div class="header-left">
-    <a href="{{ routes.root_url }}" class="logo">
-      {%- if section.settings.logo_image != blank -%}
-        <img
-          src="{{ section.settings.logo_image | image_url: width: 300 }}"
-          alt="{{ section.settings.logo_image.alt | default: shop.name | escape }}"
-          class="logo-image-tag"
-          width="{{ section.settings.logo_image.width }}"
-          height="{{ section.settings.logo_image.height }}"
-          loading="eager"
-        />
-      {%- else -%}
-        {{ shop.name }}
-      {%- endif -%}
-    </a>
+  <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 
-    <nav class="left">
-      {%- for link in linklists[section.settings.main_menu].links -%}
-        <a href="{{ link.url }}">{{ link.title }}</a>
-      {%- endfor -%}
-    </nav>
-  </div>
+  <nav class="left">
+    {%- for link in linklists[section.settings.main_menu].links -%}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    {%- endfor -%}
+  </nav>
+
+  <a href="{{ routes.root_url }}" class="logo">
+    {%- if section.settings.logo_image != blank -%}
+      <img
+        src="{{ section.settings.logo_image | image_url: width: 300 }}"
+        alt="{{ section.settings.logo_image.alt | default: shop.name | escape }}"
+        class="logo-image-tag"
+        width="{{ section.settings.logo_image.width }}"
+        height="{{ section.settings.logo_image.height }}"
+        loading="eager"
+      />
+    {%- else -%}
+      {{ shop.name }}
+    {%- endif -%}
+  </a>
 
   <nav class="right">
     <button class="icon-btn" aria-label="Search" onclick="document.querySelector('.search-overlay').classList.toggle('active')">
@@ -39,6 +41,17 @@
     </a>
   </nav>
 </header>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+  <button class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+  <nav class="drawer-nav">
+    {%- for link in linklists[section.settings.main_menu].links -%}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    {%- endfor -%}
+  </nav>
+</div>
+<div class="drawer-overlay" id="drawer-overlay"></div>
 
 <!-- Search Overlay -->
 <div class="search-overlay">
@@ -59,6 +72,38 @@
   </form>
 </div>
 
+<script>
+  (function () {
+    const hamburger = document.getElementById('hamburger-btn');
+    const drawer    = document.getElementById('mobile-drawer');
+    const overlay   = document.getElementById('drawer-overlay');
+    const closeBtn  = document.getElementById('drawer-close');
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      overlay.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      drawer.removeAttribute('aria-hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      overlay.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+    drawer.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeDrawer);
+    });
+  })();
+</script>
+
 {% schema %}
 {
   "name": "Header",
@@ -73,7 +118,7 @@
       "type": "image_picker",
       "id": "logo_image",
       "label": "Logo image"
-    },
+    }
   ]
 }
 {% endschema %}

@@ -6,9 +6,9 @@
       {%- for image in product.images -%}
         <div class="product-gallery-item {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}">
           <img
-            src="{{ image | image_url: width: 800, crop: 'center' }}"
+            src="{{ image | image_url: width: 300, crop: 'center' }}"
             alt="{{ image.alt | escape }}"
-            width="800" height="1000"
+            width="300" height="676"
             loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
           />
         </div>
@@ -17,7 +17,7 @@
         <div class="product-gallery-thumbs">
           {%- for image in product.images -%}
             <button class="thumb {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}" aria-label="View image {{ forloop.index }}">
-              <img src="{{ image | image_url: width: 120, crop: 'center' }}" alt="{{ image.alt | escape }}" width="120" height="120" loading="lazy" />
+              <img src="{{ image | image_url: width: 300, crop: 'center' }}" alt="{{ image.alt | escape }}" width="120" height="120" loading="lazy" />
             </button>
           {%- endfor -%}
         </div>
