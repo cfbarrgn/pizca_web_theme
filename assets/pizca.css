@@ -46,8 +46,6 @@
   /* ── TYPOGRAPHY ── */
   --font-display:      Georgia, 'DM Serif Display', serif;
   --font-body:         'Trebuchet MS', 'Space Grotesk', sans-serif;
-  --font-display:      Georgia, 'DM Serif Display', serif;
-  --font-body:         'Trebuchet MS', 'Space Grotesk', sans-serif;
 
   /* ── TYPE SCALE ── */
   --text-wordmark:     clamp(2rem, 5vw, 4rem);
@@ -114,9 +112,9 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 header { position: sticky; top: 0; z-index: 100; background: var(--color-crema); display: flex; justify-content: space-between; align-items: center; padding: 16px 48px; transition: box-shadow 0.3s; }
 header { position: sticky; top: 0; z-index: 100; background: var(--color-crema); display: flex; justify-content: space-between; align-items: center; padding: 16px 48px; transition: box-shadow 0.3s; }
 header.scrolled { box-shadow: 0 4px 40px rgba(0,0,0,0.4); }
+/*.header-left { display: flex; align-items: center; gap: 36px; }
 .header-left { display: flex; align-items: center; gap: 36px; }
-.header-left { display: flex; align-items: center; gap: 36px; }
-.header-left { display: flex; align-items: center; gap: 36px; }
+.header-left { display: flex; align-items: center; gap: 36px; }*/
 nav.left  { flex: 1; display: flex; gap: 36px; }
 nav.right { flex: 1; display: flex; gap: 20px; align-items: center; justify-content: flex-end; }
 nav a { font-size: 15px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; color: var( --color-tobacco); text-decoration: none; transition: color 0.25s; }
@@ -396,17 +394,14 @@ nav a:hover { color: var(--gold-light); }
 .stores-head .section-title { color: var(--parchment); }
 .stores-head .section-title em { color: var(--terra-light); }
 .stores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-.store-card { background: var(--charcoal); padding: 40px 36px; border: 1px solid rgba(200,184,154,0.05); transition: background 0.3s, border-color 0.3s; }
-.store-card:hover { background: rgba(201,74,30,0.08); border-color: rgba(201,74,30,0.2); }
-.store-city { font-family: var(--font-display); font-size: 28px; font-weight: 900; color: var(--parchment); margin-bottom: 4px; }
-.store-city { font-family: var(--font-display); font-size: 28px; font-weight: 900; color: var(--parchment); margin-bottom: 4px; }
-.store-city { font-family: var(--font-display); font-size: 28px; font-weight: 900; color: var(--parchment); margin-bottom: 4px; }
+.store-card { background: var(--color-crema); padding: 40px 36px; border: 1px solid rgba(200,184,154,0.05); transition: background 0.3s, border-color 0.3s; }
+.store-card:hover { background: var(--color-caramel); border-color: var(--color-chile-red); }
+.store-name { font-family: var(--font-body); font-size: 20px; font-weight: 900; color: var(--color-tobacco); margin-bottom: 4px; }
+.store-city { font-family: var(--font-body); font-size: 15px; font-weight: 900; color: var(--color-chile-red); margin-bottom: 4px; }
 .store-country { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); font-weight: 500; margin-bottom: 24px; }
-.store-address { font-family: var(--font-display); font-size: 13px; line-height: 1.8; color: var(--smoke); font-style: italic; margin-bottom: 20px; }
-.store-address { font-family: var(--font-display); font-size: 13px; line-height: 1.8; color: var(--smoke); font-style: italic; margin-bottom: 20px; }
-.store-address { font-family: var(--font-display); font-size: 13px; line-height: 1.8; color: var(--smoke); font-style: italic; margin-bottom: 20px; }
+.store-address { font-family: var(--font-display); font-size: 13px; line-height: 1.8; color: var(--smoke); margin-bottom: 20px; }
 .store-hours { font-size: 11px; letter-spacing: 0.1em; color: var(--smoke); margin-bottom: 28px; }
-.store-link { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s; }
+.store-link { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-chile-red); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s; }
 .store-link:hover { gap: 14px; }
 .store-link::after { content: '→'; }
 .stores-map { height: 440px; margin-bottom: 64px; border: 1px solid rgba(200,184,154,0.1); }
