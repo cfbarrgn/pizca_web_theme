@@ -37,7 +37,6 @@
           "cta_primary_label": "Shop Now",
           "cta_primary_url": "",
           "cta_secondary_label": "Our Story",
-          "cta_secondary_url": "shopify://pages/our-story",
           "heat_level": 3,
           "heat_label": "Medium-Hot"
         }
@@ -197,7 +196,7 @@
           "store_kwVcLt": {
             "type": "store",
             "settings": {
-              "city": "Oxford",
+              "city": "Shelby Township",
               "country": "USA",
               "label": "Señoritas Mexican Restaurant",
               "address": "48758 Van Dyke Ave, Shelby Township, MI 48317",
@@ -269,6 +268,10 @@
       },
       "collection": {
         "type": "collection",
+        "settings": {}
+      },
+      "product": {
+        "type": "product",
         "settings": {}
       }
     },
