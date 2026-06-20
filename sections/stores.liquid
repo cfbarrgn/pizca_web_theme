@@ -28,8 +28,9 @@
     {%- for block in section.blocks -%}
       {%- if block.type == 'store' -%}
         <div class="store-card reveal" {{ block.shopify_attributes }}>
+          <div class="store-name">{{ block.settings.label }}</div>
           <div class="store-city">{{ block.settings.city }}</div>
-          <div class="store-country">{{ block.settings.country }}{% if block.settings.label != blank %} &middot; {{ block.settings.label }}{% endif %}</div>
+          {% comment %} <div class="store-country">{{ block.settings.country }}{% if block.settings.label != blank %} &middot; {{ block.settings.label }}{% endif %}</div> {% endcomment %}
           <div class="store-address">{{ block.settings.address }}</div>
           {%- if block.settings.hours != blank -%}
             <div class="store-hours">{{ block.settings.hours }}</div>
