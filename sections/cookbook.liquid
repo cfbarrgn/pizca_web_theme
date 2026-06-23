@@ -5,41 +5,114 @@
   </div>
 
   <div class="recipes-grid">
-    {%- for block in section.blocks -%}
-      {%- if block.type == 'recipe' -%}
-        <div class="recipe-card reveal" {{ block.shopify_attributes }}>
+    {%- if section.settings.blog != blank -%}
+      {%- assign cookbook_blog = blogs[section.settings.blog] -%}
+
+      {%- for article in cookbook_blog.articles limit: section.settings.articles_to_show -%}
+        {%- assign prep      = article.metafields.recipe.prep_time -%}
+        {%- assign cook      = article.metafields.recipe.cook_time -%}
+        {%- assign meal_type = article.metafields.recipe.meal_type -%}
+
+        {%- if prep != blank and cook != blank -%}
+          {%- assign time_display = prep | append: ' + ' | append: cook -%}
+        {%- elsif prep != blank -%}
+          {%- assign time_display = prep -%}
+        {%- elsif cook != blank -%}
+          {%- assign time_display = cook -%}
+        {%- else -%}
+          {%- assign time_display = '' -%}
+        {%- endif -%}
+
+        {%- if meal_type == blank -%}
+          {%- assign meal_type = article.tags | last -%}
+        {%- endif -%}
+
+        {%- assign primary_tag = article.tags | first -%}
+
+        <div class="recipe-card reveal">
           <div class="recipe-img">
-            {%- if block.settings.image -%}
+            {%- if article.image -%}
               <img
-                src="{{ block.settings.image | image_url: '800x600', crop: 'center' }}"
-                alt="{{ block.settings.image.alt | escape }}"
+                src="{{ article.image | image_url: '800x600', crop: 'center' }}"
+                alt="{{ article.image.alt | default: article.title | escape }}"
                 width="800" height="600"
                 loading="lazy"
                 class="recipe-img-tag"
               />
             {%- else -%}
               <div class="recipe-img-placeholder r{{ forloop.index }}">
-                <span class="recipe-tag">{{ block.settings.tag }}</span>
+                {%- if primary_tag != blank -%}
+                  <span class="recipe-tag">{{ primary_tag }}</span>
+                {%- endif -%}
               </div>
             {%- endif -%}
-            {%- if block.settings.image and block.settings.tag != blank -%}
-              <span class="recipe-tag">{{ block.settings.tag }}</span>
+            {%- if article.image and primary_tag != blank -%}
+              <span class="recipe-tag">{{ primary_tag }}</span>
             {%- endif -%}
           </div>
           <div class="recipe-info">
-            <div class="recipe-meta">{{ block.settings.time }} &nbsp;&middot;&nbsp; {{ block.settings.meal_type }}</div>
-            <div class="recipe-name">{{ block.settings.name }}</div>
-            {%- if block.settings.preview != blank -%}
-              <div class="recipe-preview">{{ block.settings.preview }}</div>
+            {%- if time_display != blank or meal_type != blank -%}
+              <div class="recipe-meta">
+                {{ time_display }}
+                {%- if time_display != blank and meal_type != blank -%}&nbsp;&middot;&nbsp;{%- endif -%}
+                {{ meal_type }}
+              </div>
             {%- endif -%}
-            {%- if block.settings.link_url != blank -%}
-              <a href="{{ block.settings.link_url }}" class="recipe-link">Get the Recipe</a>
+            <div class="recipe-name">{{ article.title }}</div>
+            {%- if article.excerpt != blank -%}
+              <div class="recipe-preview">{{ article.excerpt | strip_html | truncate: 120 }}</div>
+            {%- elsif article.content != blank -%}
+              <div class="recipe-preview">{{ article.content | strip_html | truncate: 120 }}</div>
             {%- endif -%}
+            <a href="{{ article.url }}" class="recipe-link">Get the Recipe</a>
           </div>
         </div>
-      {%- endif -%}
-    {%- endfor -%}
+      {%- endfor -%}
+
+    {%- else -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'recipe' -%}
+          <div class="recipe-card reveal" {{ block.shopify_attributes }}>
+            <div class="recipe-img">
+              {%- if block.settings.image -%}
+                <img
+                  src="{{ block.settings.image | image_url: '800x600', crop: 'center' }}"
+                  alt="{{ block.settings.image.alt | escape }}"
+                  width="800" height="600"
+                  loading="lazy"
+                  class="recipe-img-tag"
+                />
+              {%- else -%}
+                <div class="recipe-img-placeholder r{{ forloop.index }}">
+                  <span class="recipe-tag">{{ block.settings.tag }}</span>
+                </div>
+              {%- endif -%}
+              {%- if block.settings.image and block.settings.tag != blank -%}
+                <span class="recipe-tag">{{ block.settings.tag }}</span>
+              {%- endif -%}
+            </div>
+            <div class="recipe-info">
+              <div class="recipe-meta">{{ block.settings.time }} &nbsp;&middot;&nbsp; {{ block.settings.meal_type }}</div>
+              <div class="recipe-name">{{ block.settings.name }}</div>
+              {%- if block.settings.preview != blank -%}
+                <div class="recipe-preview">{{ block.settings.preview }}</div>
+              {%- endif -%}
+              {%- if block.settings.link_url != blank -%}
+                <a href="{{ block.settings.link_url }}" class="recipe-link">Get the Recipe</a>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
   </div>
+
+  {%- if section.settings.blog != blank and section.settings.show_view_all -%}
+    {%- assign cookbook_blog = blogs[section.settings.blog] -%}
+    <div class="cookbook-footer">
+      <a href="{{ cookbook_blog.url }}" class="btn-ghost">{{ section.settings.view_all_label }}</a>
+    </div>
+  {%- endif -%}
 </section>
 
 {% schema %}
@@ -57,12 +130,43 @@
       "id": "title",
       "label": "Section title",
       "default": "Cook with Pizca"
+    },
+    {
+      "type": "header",
+      "content": "Blog source"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog",
+      "info": "Select a blog to pull recipes from. When set, manual recipe blocks below are ignored."
+    },
+    {
+      "type": "range",
+      "id": "articles_to_show",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "label": "Recipes to show",
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show 'View all' link",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "view_all_label",
+      "label": "View all label",
+      "default": "View All Recipes"
     }
   ],
   "blocks": [
     {
       "type": "recipe",
-      "name": "Recipe",
+      "name": "Recipe (manual fallback)",
       "settings": [
         {
           "type": "image_picker",
