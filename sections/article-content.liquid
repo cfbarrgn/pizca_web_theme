@@ -1,0 +1,177 @@
+<div class="article-page">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="{{ shop.url }}">Home</a>
+    <span class="breadcrumb-sep">/</span>
+    <a href="{{ blog.url }}">{{ blog.title }}</a>
+    <span class="breadcrumb-sep">/</span>
+    <span>{{ article.title | truncate: 40 }}</span>
+  </nav>
+
+  <!-- Article header -->
+  <header class="article-header reveal">
+    {%- if article.tags.size > 0 -%}
+      <div class="article-tags">
+        {%- for tag in article.tags -%}
+          {{ tag | link_to_tag: tag | replace: '<a ', '<a class="tag-pill" ' }}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <h1 class="article-title">{{ article.title }}</h1>
+
+    <div class="article-meta">
+      <span class="article-author">By {{ article.author }}</span>
+      <span class="meta-sep">&middot;</span>
+      <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+        {{ article.published_at | date: "%B %d, %Y" }}
+      </time>
+      {%- assign words = article.content | strip_html | split: ' ' -%}
+      {%- assign read_time = words.size | divided_by: 200 | plus: 1 -%}
+      <span class="meta-sep">&middot;</span>
+      <span>{{ read_time }} min read</span>
+    </div>
+  </header>
+
+  <!-- Hero image -->
+  {%- if article.image -%}
+    <div class="article-hero-wrap reveal">
+      <img
+        src="{{ article.image | image_url: width: 1200, crop: 'center' }}"
+        alt="{{ article.image.alt | default: article.title | escape }}"
+        class="article-hero-img"
+        width="1200"
+        height="630"
+        loading="eager"
+      />
+    </div>
+  {%- endif -%}
+
+  <!-- Recipe quick-info bar (from metafields) -->
+  {%- assign prep_time   = article.metafields.recipe.prep_time -%}
+  {%- assign cook_time   = article.metafields.recipe.cook_time -%}
+  {%- assign servings    = article.metafields.recipe.servings -%}
+  {%- assign difficulty  = article.metafields.recipe.difficulty -%}
+  {%- if prep_time != blank or cook_time != blank or servings != blank or difficulty != blank -%}
+    <div class="recipe-quickinfo reveal">
+      {%- if prep_time != blank -%}
+        <div class="recipe-quickinfo-item">
+          <span class="rqi-label">Prep Time</span>
+          <span class="rqi-value">{{ prep_time }}</span>
+        </div>
+      {%- endif -%}
+      {%- if cook_time != blank -%}
+        <div class="recipe-quickinfo-item">
+          <span class="rqi-label">Cook Time</span>
+          <span class="rqi-value">{{ cook_time }}</span>
+        </div>
+      {%- endif -%}
+      {%- if servings != blank -%}
+        <div class="recipe-quickinfo-item">
+          <span class="rqi-label">Servings</span>
+          <span class="rqi-value">{{ servings }}</span>
+        </div>
+      {%- endif -%}
+      {%- if difficulty != blank -%}
+        <div class="recipe-quickinfo-item">
+          <span class="rqi-label">Difficulty</span>
+          <span class="rqi-value">{{ difficulty }}</span>
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <!-- Article body -->
+  <div class="article-body rte reveal">
+    {{ article.content }}
+  </div>
+
+  <!-- Recipe card: ingredients + instructions (from metafields) -->
+  {%- assign ingredients  = article.metafields.recipe.ingredients -%}
+  {%- assign instructions = article.metafields.recipe.instructions -%}
+  {%- if ingredients != blank or instructions != blank -%}
+    <div class="recipe-box reveal">
+      <div class="recipe-box-header">
+        <p class="section-eyebrow">{{ section.settings.recipe_box_eyebrow }}</p>
+        <h2 class="recipe-box-title">{{ article.title }}</h2>
+      </div>
+
+      <div class="recipe-two-col">
+        {%- if ingredients != blank -%}
+          <div class="recipe-col">
+            <h3 class="recipe-col-heading">Ingredients</h3>
+            <ul class="ingredient-list">
+              {%- assign ingredient_lines = ingredients | newline_to_br | split: '<br />' -%}
+              {%- for line in ingredient_lines -%}
+                {%- assign trimmed = line | strip -%}
+                {%- unless trimmed == blank -%}
+                  <li>{{ trimmed }}</li>
+                {%- endunless -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
+        {%- if instructions != blank -%}
+          <div class="recipe-col">
+            <h3 class="recipe-col-heading">Instructions</h3>
+            <ol class="instruction-list">
+              {%- assign instruction_lines = instructions | newline_to_br | split: '<br />' -%}
+              {%- for line in instruction_lines -%}
+                {%- assign trimmed = line | strip -%}
+                {%- unless trimmed == blank -%}
+                  <li>{{ trimmed }}</li>
+                {%- endunless -%}
+              {%- endfor -%}
+            </ol>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  <!-- Footer tags -->
+  {%- if article.tags.size > 0 -%}
+    <div class="article-footer-tags">
+      <span class="article-footer-tags-label">Filed under</span>
+      {%- for tag in article.tags -%}
+        {{ tag | link_to_tag: tag | replace: '<a ', '<a class="tag-pill" ' }}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  <!-- Related articles -->
+  {%- if blog.articles.size > 1 -%}
+    <div class="related-articles">
+      <p class="section-eyebrow">More Recipes</p>
+      <div class="related-grid">
+        {%- assign shown = 0 -%}
+        {%- for related in blog.articles -%}
+          {%- unless related.id == article.id or shown >= 3 -%}
+            {%- render 'article-card', article: related -%}
+            {%- assign shown = shown | plus: 1 -%}
+          {%- endunless -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+</div>
+
+{% schema %}
+{
+  "name": "Article Content",
+  "settings": [
+    {
+      "type": "text",
+      "id": "recipe_box_eyebrow",
+      "label": "Recipe box eyebrow",
+      "default": "Full Recipe"
+    }
+  ],
+  "presets": [
+    { "name": "Article Content" }
+  ]
+}
+{% endschema %}
