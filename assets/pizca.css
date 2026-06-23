@@ -271,12 +271,12 @@ nav a:hover { color: var(--gold-light); }
 .ring1 { width: 300px; height: 300px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
 .ring2 { width: 500px; height: 500px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
 .ring3 { width: 700px; height: 700px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
-.story-text { display: grid; flex-direction: column; justify-content: center; padding: 80px 80px 80px 72px; color: var(--parchment); }
+.story-text { display: flex; flex-direction: column; justify-content: center; padding: 80px 80px 80px 72px; color: var(--parchment); }
 .story-text .section-eyebrow { color: var(--gold); }
 .story-text .section-eyebrow::after { background: var(--gold); }
 .story-text .section-title { color: var(--color-dark-earth); }
 .story-text .section-title em { color: var(--color-cacao); }
-.story-body { margin-top: 28px; font-family: var(--font-body); font-size: 20px; font-style: normal; line-height: 1.9; color: var(--color-cacao); max-width: 420px; }
+.story-body { margin-top: 100px; font-family: var(--font-body); font-size: 20px; font-style: normal; line-height: 1.9; color: var(--color-cacao); max-width: 420px; }
 .story-body p { margin-bottom: 16px; }
 .story-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(200,184,154,0.1); }
 .stat-num { font-family: var(--font-display); font-size: 36px; font-weight: 900; color: var(--terra); line-height: 1; }
