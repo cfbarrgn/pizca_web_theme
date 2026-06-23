@@ -33,7 +33,7 @@
           <div class="recipe-img">
             {%- if article.image -%}
               <img
-                src="{{ article.image | image_url: '800x600', crop: 'center' }}"
+                src="{{ article.image | image_url: width: 800, crop: 'center' }}"
                 alt="{{ article.image.alt | default: article.title | escape }}"
                 width="800" height="600"
                 loading="lazy"
