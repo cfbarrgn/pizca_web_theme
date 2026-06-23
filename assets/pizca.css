@@ -153,9 +153,7 @@ nav a:hover { color: var(--gold-light); }
 .btn-secondary, .btn-ghost { background: transparent; color: var(--color-chile-red); border: 2px solid var(--color-chile-red); padding: 0.75rem 1.5rem; font-family: var(--font-body); font-size: 11px; letter-spacing: 0.05em; font-weight: 700; border-radius: var(--radius-pill); cursor: pointer; transition: background-color 0.2s ease; text-decoration: none; display: inline-block; }
 .btn-secondary:hover, .btn-ghost:hover { background-color: var(--color-blush); }
 
-
 /* HERO */
-.hero { position: relative; min-height: calc(100vh - 112px); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; background: var(--color-crema); }
 .hero { position: relative; min-height: calc(100vh - 112px); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; background: var(--color-crema); }
 .hero-media { position: relative; overflow: hidden; }
 .hero-image-tag { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -163,11 +161,9 @@ nav a:hover { color: var(--gold-light); }
 .img-credit { font-size: 10px; letter-spacing: 0.15em; color: rgba(200,184,154,0.35); text-transform: uppercase; }
 .hero-deco-number { position: absolute; right: -20px; top: 50%; transform: translateY(-50%) rotate(90deg); font-family: var(--font-display); font-size: 180px; font-weight: 900; color: rgba(201,74,30,0.07); line-height: 1; user-select: none; white-space: nowrap; }
 .hero-content { display: flex; flex-direction: column; justify-content: center; padding: 80px 72px 80px 80px; position: relative; background: var(---color-crema); }
-.hero-content { display: flex; flex-direction: column; justify-content: center; padding: 80px 72px 80px 80px; position: relative; background: var(---color-crema); }
 .hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(201,74,30,0.15); border: 1px solid rgba(201,74,30,0.3); border-radius: 2px; padding: 7px 16px; margin-bottom: 36px; width: fit-content; }
 .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--terra); }
 .hero-badge span { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terra-light); font-weight: 500; }
-.hero-title { font-family: var(--font-display); font-weight: 900; font-size: clamp(54px, 5.5vw, 88px); line-height: 0.95; color: var(--color-dark-earth); margin-bottom: 10px; }
 .hero-title { font-family: var(--font-display); font-weight: 900; font-size: clamp(54px, 5.5vw, 88px); line-height: 0.95; color: var(--color-dark-earth); margin-bottom: 10px; }
 .hero-title em { font-style: italic; color: var(--terra); display: block; }
 .hero-title .outline { -webkit-text-stroke: 1px var(--color-cacao); color: transparent; }
@@ -191,13 +187,10 @@ nav a:hover { color: var(--gold-light); }
 /* SECTION HELPERS */
 .section-eyebrow { font-size: 15px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 500; color: var(--color-tobacco); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
 .section-eyebrow::after { content: ''; flex: 0 0 40px; height: 1px; background: var(--tobacco); }
-.section-eyebrow { font-size: 15px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 500; color: var(--color-tobacco); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
-.section-eyebrow::after { content: ''; flex: 0 0 40px; height: 1px; background: var(--tobacco); }
 .section-title { font-family: var(--font-display); font-weight: 900; font-size: clamp(38px, 4vw, 58px); line-height: 1.05; }
 .section-title em { font-style: normal; color: var(--terra); }
 
 /* PRODUCTS */
-.products { padding: 96px 64px; background: var(--color-crema); }
 .products { padding: 96px 64px; background: var(--color-crema); }
 .products-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 56px; }
 .view-all { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--smoke); text-decoration: none; border-bottom: 1px solid var(--stone); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
@@ -254,17 +247,11 @@ nav a:hover { color: var(--gold-light); }
 .thumb img { display: block; width: 72px; height: 72px; object-fit: cover; }
 .product-info-panel { padding-top: 16px; }
 .product-page-title { font-family: var(--font-display); font-size: 44px; font-weight: 900; margin: 16px 0 20px; line-height: 1.1; }
-.product-page-title { font-family: var(--font-display); font-size: 44px; font-weight: 900; margin: 16px 0 20px; line-height: 1.1; }
-.product-page-title { font-family: var(--font-display); font-size: 44px; font-weight: 900; margin: 16px 0 20px; line-height: 1.1; }
 .product-page-price { font-size: 22px; font-weight: 500; margin-bottom: 28px; }
-.product-page-desc { font-family: var(--font-display); font-size: 15px; line-height: 1.85; color: var(--smoke); margin-bottom: 32px; }
-.product-page-desc { font-family: var(--font-display); font-size: 15px; line-height: 1.85; color: var(--smoke); margin-bottom: 32px; }
 .product-page-desc { font-family: var(--font-display); font-size: 15px; line-height: 1.85; color: var(--smoke); margin-bottom: 32px; }
 .variant-group { margin-bottom: 20px; }
 .variant-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; display: block; margin-bottom: 10px; color: var(--smoke); }
 .variant-options { display: flex; gap: 8px; flex-wrap: wrap; }
-.variant-btn { padding: 8px 16px; background: none; border: 1px solid var(--stone); font-family: var(--font-body); font-size: 12px; cursor: pointer; transition: all 0.2s; }
-.variant-btn { padding: 8px 16px; background: none; border: 1px solid var(--stone); font-family: var(--font-body); font-size: 12px; cursor: pointer; transition: all 0.2s; }
 .variant-btn { padding: 8px 16px; background: none; border: 1px solid var(--stone); font-family: var(--font-body); font-size: 12px; cursor: pointer; transition: all 0.2s; }
 .variant-btn.active { border-color: var(--terra); background: var(--terra); color: var(--parchment); }
 .btn-add-to-cart { width: 100%; margin-top: 28px; padding: 18px; font-size: 12px; }
@@ -311,8 +298,6 @@ nav a:hover { color: var(--gold-light); }
 .r3 { background: linear-gradient(150deg, #201418 0%, #4a2830 50%, #8a5840 100%); }
 .recipe-tag { background: var(--terra); color: #fff; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; padding: 5px 10px; font-weight: 500; display: inline-block; }
 .recipe-info { padding: 22px 24px 26px; }
-.recipe-name { font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 8px; line-height: 1.2; }
-.recipe-name { font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 8px; line-height: 1.2; }
 .recipe-name { font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 8px; line-height: 1.2; }
 .recipe-card:first-child .recipe-name { font-size: 26px; }
 .recipe-meta { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--smoke); margin-bottom: 12px; }
@@ -405,13 +390,7 @@ footer { background: var(--black); color: var(--stone); padding: 72px 64px 40px;
 .static-page { padding: 80px 64px; max-width: 800px; margin: 0 auto; }
 .static-page-title { font-family: var(--font-display); font-size: 52px; font-weight: 900; margin-bottom: 40px; }
 .static-page-content.rte { font-family: var(--font-display); font-size: 16px; line-height: 1.85; color: var(--smoke); }
-.static-page-title { font-family: var(--font-display); font-size: 52px; font-weight: 900; margin-bottom: 40px; }
-.static-page-content.rte { font-family: var(--font-display); font-size: 16px; line-height: 1.85; color: var(--smoke); }
-.static-page-title { font-family: var(--font-display); font-size: 52px; font-weight: 900; margin-bottom: 40px; }
-.static-page-content.rte { font-family: var(--font-display); font-size: 16px; line-height: 1.85; color: var(--smoke); }
 .static-page-content.rte p { margin-bottom: 20px; }
-.static-page-content.rte h2 { font-family: var(--font-display); font-size: 28px; margin: 40px 0 16px; color: var(--black); }
-.static-page-content.rte h2 { font-family: var(--font-display); font-size: 28px; margin: 40px 0 16px; color: var(--black); }
 .static-page-content.rte h2 { font-family: var(--font-display); font-size: 28px; margin: 40px 0 16px; color: var(--black); }
 
 /* CART PAGE */
