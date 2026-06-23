@@ -1,0 +1,46 @@
+<article class="article-card reveal">
+  <a href="{{ article.url }}" class="article-card-img-link">
+    <div class="article-img-wrap">
+      {%- if article.image -%}
+        <img
+          src="{{ article.image | image_url: width: 600, crop: 'center' }}"
+          alt="{{ article.image.alt | default: article.title | escape }}"
+          class="article-img-tag"
+          width="600"
+          height="400"
+          loading="lazy"
+        />
+      {%- else -%}
+        <div class="article-img-placeholder">
+          <span class="article-img-placeholder-text">{{ article.title | upcase | truncate: 20 }}</span>
+        </div>
+      {%- endif -%}
+      {%- assign primary_tag = article.tags | first -%}
+      {%- if primary_tag -%}
+        <span class="article-card-tag">{{ primary_tag }}</span>
+      {%- endif -%}
+    </div>
+  </a>
+
+  <div class="article-card-info">
+    <div class="article-card-meta">
+      <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: "%b %d, %Y" }}</time>
+      {%- assign words = article.content | strip_html | split: ' ' -%}
+      {%- assign read_time = words.size | divided_by: 200 | plus: 1 -%}
+      <span class="meta-sep">&middot;</span>
+      <span>{{ read_time }} min read</span>
+    </div>
+
+    <a href="{{ article.url }}" class="article-card-title-link">
+      <h3 class="article-card-title">{{ article.title }}</h3>
+    </a>
+
+    {%- if article.excerpt != blank -%}
+      <p class="article-card-excerpt">{{ article.excerpt | strip_html | truncate: 140 }}</p>
+    {%- elsif article.content != blank -%}
+      <p class="article-card-excerpt">{{ article.content | strip_html | truncate: 140 }}</p>
+    {%- endif -%}
+
+    <a href="{{ article.url }}" class="recipe-link">Get the Recipe</a>
+  </div>
+</article>

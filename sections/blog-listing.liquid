@@ -1,0 +1,81 @@
+{%- paginate blog.articles by section.settings.articles_per_page -%}
+
+<section class="blog-listing">
+  <div class="blog-listing-head reveal">
+    <p class="section-eyebrow">{{ section.settings.eyebrow }}</p>
+    <h1 class="section-title">{{ section.settings.title }}</h1>
+    {%- if section.settings.description != blank -%}
+      <p class="blog-listing-desc">{{ section.settings.description }}</p>
+    {%- endif -%}
+
+    {%- if blog.all_tags.size > 0 -%}
+      <div class="tag-filters">
+        <a href="{{ blog.url }}" class="tag-pill{% unless current_tags %} active{% endunless %}">All</a>
+        {%- for tag in blog.all_tags -%}
+          {%- if current_tags contains tag -%}
+            <a href="{{ blog.url }}" class="tag-pill active">{{ tag }}</a>
+          {%- else -%}
+            {{ tag | link_to_tag: tag | replace: '<a ', '<a class="tag-pill" ' }}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- if blog.articles.size > 0 -%}
+    <div class="articles-grid">
+      {%- for article in blog.articles -%}
+        {%- render 'article-card', article: article -%}
+      {%- endfor -%}
+    </div>
+  {%- else -%}
+    <div class="blog-empty">
+      <p>No recipes yet — check back soon.</p>
+    </div>
+  {%- endif -%}
+
+  {%- if paginate.pages > 1 -%}
+    <div class="pagination">
+      {{ paginate | default_pagination }}
+    </div>
+  {%- endif -%}
+</section>
+
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "Blog Listing",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "The Cookbook"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Blog title",
+      "default": "Recipes & Stories"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Blog description"
+    },
+    {
+      "type": "range",
+      "id": "articles_per_page",
+      "min": 3,
+      "max": 12,
+      "step": 3,
+      "label": "Articles per page",
+      "default": 9
+    }
+  ],
+  "presets": [
+    { "name": "Blog Listing" }
+  ]
+}
+{% endschema %}
