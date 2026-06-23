@@ -40,6 +40,9 @@
     <a href="{{ product.url }}" class="product-name-link">
       <div class="product-name">{{ product.title }}</div>
     </a>
+    <div class="jdgm-widget jdgm-preview-badge" data-id="{{ product.id }}" data-auto-install="false">
+      {{ product.metafields.judgeme.badge }}
+    </div>
     {%- if product.metafields.pizca.short_description != blank -%}
       <div class="product-desc">{{ product.metafields.pizca.short_description }}</div>
     {%- elsif product.description != blank -%}
