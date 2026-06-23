@@ -19,7 +19,7 @@
         "type": "header",
         "settings": {
           "main_menu": "main-menu",
-          "logo_image": "shopify://shop_images/Pizca_logo.png"
+          "logo_image": "shopify://shop_images/PizcaLogo_Variation.png"
         }
       },
       "hero": {
@@ -277,6 +277,12 @@
       "product": {
         "type": "product",
         "settings": {}
+      },
+      "article-content": {
+        "type": "article-content",
+        "settings": {
+          "recipe_box_eyebrow": "Full Recipe"
+        }
       }
     },
     "content_for_index": []
