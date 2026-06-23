@@ -8,9 +8,9 @@
   // ── Sticky header shadow ──────────────────────────────────
   const header = document.getElementById('site-header');
   if (header) {
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 50);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   }
 
   // ── Scroll reveal ─────────────────────────────────────────
