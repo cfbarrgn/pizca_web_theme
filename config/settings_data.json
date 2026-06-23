@@ -70,7 +70,11 @@
         "type": "cookbook",
         "settings": {
           "eyebrow": "Cookbook",
-          "title": "Cook with Pizca"
+          "title": "Cook with Pizca",
+          "blog": "cooking-with-pizca",
+          "articles_to_show": 3,
+          "show_view_all": true,
+          "view_all_label": "View All Recipes"
         }
       },
       "stores": {
