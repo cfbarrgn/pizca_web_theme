@@ -1,4 +1,5 @@
 <div class="product-card reveal">
+  <a href="{{ product.url }}" class="product-name-link">
   <div class="product-img-wrap">
     {%- if product.featured_image -%}
       <img
@@ -40,11 +41,25 @@
     <a href="{{ product.url }}" class="product-name-link">
       <div class="product-name">{{ product.title }}</div>
     </a>
+    {%- assign heat = product.metafields.custom.heat_level | plus: 0 -%}
+      {%- if heat > 0 -%}
+        <div class="heat-bar" style="margin: 0 0 28px;">
+          <span class="heat-label">Heat Level</span>
+          <div class="heat-dots">
+            {%- for i in (1..5) -%}
+              <span class="heat-dot{% if i <= heat %} active{% endif %}"></span>
+            {%- endfor -%}
+          </div>
+          <span class="heat-text">{{ product.metafields.custom.heat_label }}</span>
+        </div>
+    {%- endif -%}
+    <!-- Start of Judge.me code --> 
     <div class="jdgm-widget jdgm-preview-badge" data-id="{{ product.id }}" data-auto-install="false">
       {{ product.metafields.judgeme.badge }}
     </div>
-    {%- if product.metafields.pizca.short_description != blank -%}
-      <div class="product-desc">{{ product.metafields.pizca.short_description }}</div>
+    <!-- End of Judge.me code -->
+    {%- if product.metafields.custom.short_description != blank -%}
+      <div class="product-desc">{{ product.metafields.custom.short_description }}</div>
     {%- elsif product.description != blank -%}
       <div class="product-desc">{{ product.description | strip_html | truncate: 200 }}</div>
     {%- endif -%}
@@ -57,14 +72,7 @@
           {{ product.price | money }}
         {%- endif -%}
       </div>
-      {%- assign heat = product.metafields.pizca.heat_level | plus: 0 -%}
-      {%- if heat > 0 -%}
-        <div class="heat-mini">
-          {%- for i in (1..5) -%}
-            <span class="hm{% if i <= heat %} on{% endif %}"></span>
-          {%- endfor -%}
-        </div>
-      {%- endif -%}
     </div>
   </div>
+  </a>
 </div>
