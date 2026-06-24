@@ -14,7 +14,7 @@
             <div class="cart-item">
               <a href="{{ item.url }}" class="cart-item-img-wrap">
                 <img
-                  src="{{ item.image | image_url: '120x150', crop: 'center' }}"
+                  src="{{ item.image | image_url: width:120, crop: 'center' }}"
                   alt="{{ item.image.alt | escape }}"
                   width="120" height="150"
                   loading="lazy"
@@ -32,6 +32,7 @@
                     name="updates[]"
                     value="{{ item.quantity }}"
                     min="0"
+                    max="12"
                     class="qty-input"
                     data-index="{{ forloop.index }}"
                     aria-label="Quantity for {{ item.title }}"

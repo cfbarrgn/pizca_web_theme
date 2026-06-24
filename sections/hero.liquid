@@ -52,17 +52,6 @@
         </a>
       {%- endif -%}
     </div>
-
-    <div class="heat-bar">
-      <span class="heat-label">Heat Level</span>
-      <div class="heat-dots">
-        {%- assign heat = section.settings.heat_level | plus: 0 -%}
-        {%- for i in (1..5) -%}
-          <span class="heat-dot{% if i <= heat %} active{% endif %}"></span>
-        {%- endfor -%}
-      </div>
-      <span class="heat-text">{{ section.settings.heat_label }}</span>
-    </div>
   </div>
 </section>
 
@@ -139,21 +128,6 @@
       "id": "cta_secondary_label",
       "label": "Secondary button label",
       "default": "Our Story"
-    },
-    {
-      "type": "range",
-      "id": "heat_level",
-      "min": 1,
-      "max": 5,
-      "step": 1,
-      "label": "Heat level (dots)",
-      "default": 3
-    },
-    {
-      "type": "text",
-      "id": "heat_label",
-      "label": "Heat level label",
-      "default": "Medium-Hot"
     }
   ],
   "presets": [
