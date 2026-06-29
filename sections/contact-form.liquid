@@ -8,13 +8,13 @@
       {%- endif -%}
     </div>
 
-    {%- if form.posted_successfully? -%}
-      <div class="contact-success">
-        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <p>{{ section.settings.success_message | default: "Thank you! We'll be in touch soon." }}</p>
-      </div>
-    {%- else -%}
-      {%- form 'contact' -%}
+    {%- form 'contact' -%}
+      {%- if form.posted_successfully? -%}
+        <div class="contact-success">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <p>{{ section.settings.success_message | default: "Thank you! We'll be in touch soon." }}</p>
+        </div>
+      {%- else -%}
         {%- if form.errors -%}
           <div class="contact-errors">
             {%- for field in form.errors -%}
@@ -65,8 +65,8 @@
             <button type="submit" class="btn-primary contact-submit">Send Message</button>
           </div>
         </div>
-      {%- endform -%}
-    {%- endif -%}
+      {%- endif -%}
+    {%- endform -%}
   </div>
 </section>
 
