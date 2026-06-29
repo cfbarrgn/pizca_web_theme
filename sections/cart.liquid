@@ -14,9 +14,11 @@
             <div class="cart-item">
               <a href="{{ item.url }}" class="cart-item-img-wrap">
                 <img
-                  src="{{ item.image | image_url: width:120, crop: 'center' }}"
+                  src="{{ item.image | image_url: width:100 }}"
                   alt="{{ item.image.alt | escape }}"
-                  width="120" height="150"
+                  width="100"
+                  height="auto"
+                  style="width:100px; height:auto; display:block;"
                   loading="lazy"
                 />
               </a>
