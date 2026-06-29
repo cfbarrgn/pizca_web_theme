@@ -35,10 +35,8 @@
           "tagline": "Chile in oil. Made the traditional way.",
           "description": "Hand-toasted peppers, and nothing else that doesn't belong. Each batch is made by hand. Every jar is worth it.",
           "cta_primary_label": "Shop Now",
-          "cta_primary_url": "",
-          "cta_secondary_label": "Our Story",
-          "heat_level": 3,
-          "heat_label": "Medium-Hot"
+          "cta_primary_url": "shopify://collections/all",
+          "cta_secondary_label": "Our Story"
         }
       },
       "marquee": {
@@ -63,7 +61,7 @@
           "image_caption": "Ingredients from Mexico",
           "eyebrow": "Our Story",
           "title": "Born in Mexico",
-          "body_text": "<p>• A generations-old Mexican chile in oil recipe — brought to America and too good to keep secret.</p><p>• Crafted in small batches with wholesome ingredients, made with love.</p><p>• One taste was all it took — everyone agreed the flavor was simply incomparable.</p><p>• Real food. Real tradition. Real flavor.</p>"
+          "body_text": "<p>Behind every jar is a story that started long before we ever thought about selling anything. This authentic Mexican chile oil began as a generations-old family recipe. </p><p>A smoky, handcrafted salsa macha passed down quietly and shared only with the people we love.</p><p>We brought it to America because a flavor this real deserves a bigger table. Every small-batch jar is still made the same way it always has been: wholesome, all-natural ingredients, real dried chiles, and the kind of care that no mass-produced condiment can replicate. </p><p>One taste was all it took for everyone to agree: <em>the flavor is simply incomparable.</em>And the best part? The most delicious dishes are still ahead of you.</p>"
         }
       },
       "cookbook": {
@@ -249,8 +247,7 @@
         "type": "testimonials",
         "settings": {
           "eyebrow": "What People Say",
-          "title": "They're Obsessed",
-          "rating_text": "4.9 / 5 — 1,240 reviews"
+          "title": "They're Obsessed"
         }
       },
       "newsletter": {
