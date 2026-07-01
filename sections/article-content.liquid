@@ -49,10 +49,10 @@
   {%- endif -%}
 
   <!-- Recipe quick-info bar (from metafields) -->
-  {%- assign prep_time   = article.metafields.recipe.prep_time -%}
-  {%- assign cook_time   = article.metafields.recipe.cook_time -%}
-  {%- assign servings    = article.metafields.recipe.servings -%}
-  {%- assign difficulty  = article.metafields.recipe.difficulty -%}
+  {%- assign prep_time   = article.metafields.custom.prep_time -%}
+  {%- assign cook_time   = article.metafields.custom.cook_time -%}
+  {%- assign servings    = article.metafields.custom.servings -%}
+  {%- assign difficulty  = article.metafields.custom.difficulty -%}
   {%- if prep_time != blank or cook_time != blank or servings != blank or difficulty != blank -%}
     <div class="recipe-quickinfo reveal">
       {%- if prep_time != blank -%}
