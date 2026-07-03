@@ -27,7 +27,7 @@
       {{ section.settings.body_text }}
     </div>
 
-    <div class="story-stats">
+    {% comment %} <div class="story-stats">
       {%- for block in section.blocks -%}
         {%- if block.type == 'stat' -%}
           <div {{ block.shopify_attributes }}>
@@ -36,7 +36,7 @@
           </div>
         {%- endif -%}
       {%- endfor -%}
-    </div>
+    </div> {% endcomment %}
   </div>
 </section>
 
