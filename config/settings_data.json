@@ -280,6 +280,12 @@
         "settings": {
           "recipe_box_eyebrow": "Full Recipe"
         }
+      },
+      "password": {
+        "type": "password",
+        "settings": {
+          "image": "shopify://shop_images/RenovationPizcaLandingPage.png"
+        }
       }
     },
     "content_for_index": [],
