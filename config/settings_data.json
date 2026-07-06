@@ -286,6 +286,17 @@
         "settings": {
           "image": "shopify://shop_images/RenovationPizcaLandingPage.png"
         }
+      },
+      "404": {
+        "type": "404",
+        "settings": {
+          "image": "shopify://shop_images/404img.png",
+          "eyebrow": "Error 404",
+          "heading": "Page not found",
+          "message": "The page you're looking for doesn't exist or has been moved.",
+          "button_label": "Back to home",
+          "button_link": ""
+        }
       }
     },
     "content_for_index": [],
