@@ -25,22 +25,23 @@
         <div class="footer-col" {{ block.shopify_attributes }}>
           <h4>{{ block.settings.heading }}</h4>
           <ul>
-            {%- for link in linklists[block.settings.menu].links -%}
+            {%- for link in block.settings.menu.links -%}
               <li><a href="{{ link.url }}">{{ link.title }}</a></li>
             {%- endfor -%}
           </ul>
         </div>
       {%- endif -%}
     {%- endfor -%}
+    
 
   </div>
 
   <div class="footer-bottom">
     <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.
       &nbsp;&middot;&nbsp;
-      <a href="{{ pages['privacy-policy'].url | default: '#' }}">Privacy</a>
+      <a href="{{ "/policies/privacy-policy"  | default: '#' }}">Privacy</a>
       &nbsp;&middot;&nbsp;
-      <a href="{{ pages['terms-of-service'].url | default: '#' }}">Terms</a>
+      <a href="{{ "/policies/terms-of-service" | default: '#' }}">Terms</a>
     </p>
     <div class="payment-icons">
       {%- for type in shop.enabled_payment_types -%}

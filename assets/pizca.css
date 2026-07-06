@@ -408,12 +408,12 @@ footer { background: var(--black); color: var(--stone); padding: 72px 64px 40px;
 .qty-btn:hover { border-color: var(--terra); color: var(--terra); }
 .qty-input { width: 48px; text-align: center; border: 1px solid var(--stone); padding: 6px; font-family: var(--font-body); font-size: 14px; }
 .cart-item-price { font-size: 16px; font-weight: 500; }
-.cart-footer { margin-top: 40px; display: flex; justify-content: flex-end; }
-.cart-totals { text-align: right; }
+.cart-footer { margin-top: 40px; display: block; justify-content: left; }
+.cart-totals { text-align: left; }
 .cart-subtotal-row { display: flex; gap: 32px; align-items: center; font-size: 18px; font-weight: 500; margin-bottom: 8px; }
 .cart-subtotal-price { font-family: var(--font-display); }
 .cart-shipping-note { font-size: 12px; color: var(--smoke); margin-bottom: 24px; }
-.cart-actions { display: flex; gap: 12px; justify-content: flex-end; margin-top: 24px; }
+.cart-actions { display: flex; gap: 20px; justify-content: flex-end; margin-top: 24px; }
 
 /* COLLECTION PAGE */
 .collection-page { padding: 64px; }
