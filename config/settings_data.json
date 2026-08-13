@@ -120,6 +120,19 @@
               "map_url": "https://maps.app.goo.gl/ad5i16u66iQoN6pq7"
             }
           },
+          "store_Hrdmkx": {
+            "type": "store",
+            "settings": {
+              "city": "Oaxaca",
+              "country": "Mexico",
+              "label": "Flagship",
+              "address": "Calle Reforma 402, Centro Histórico",
+              "hours": "Mon–Sat 9am–7pm · Sun 10am–4pm",
+              "lat": "",
+              "lng": "",
+              "map_url": ""
+            }
+          },
           "store_cy9dpA": {
             "type": "store",
             "name": "Holiday Market",
@@ -212,7 +225,7 @@
               "country": "USA",
               "label": "Señoritas Mexican Restaurant",
               "address": "48758 Van Dyke Ave, Shelby Township, MI 48317",
-              "hours": "",
+              "hours": "Mon–Thr 11am–8pm · Fri 11am–9pm · Sat-Sun 10am-8pm",
               "lat": "42.65359800786373",
               "lng": "-83.0329761476057",
               "map_url": "https://maps.app.goo.gl/wU6QJCXy8RVP8HWv6"
@@ -251,6 +264,7 @@
           "store_JiYWCV",
           "store_JzWWAH",
           "store_794Mnr",
+          "store_Hrdmkx",
           "store_cy9dpA",
           "store_ebDAtU",
           "store_KaXjEH",
