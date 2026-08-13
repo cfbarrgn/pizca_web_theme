@@ -80,6 +80,7 @@
         "blocks": {
           "store_JiYWCV": {
             "type": "store",
+            "name": "Neiman's Family Market",
             "settings": {
               "city": "Village of Clarkston",
               "country": "USA",
@@ -93,6 +94,7 @@
           },
           "store_JzWWAH": {
             "type": "store",
+            "name": "Algo Especial Super Market",
             "settings": {
               "city": "Detroit",
               "country": "USA",
@@ -106,6 +108,7 @@
           },
           "store_794Mnr": {
             "type": "store",
+            "name": "Motor City Tacos",
             "settings": {
               "city": "Waterford Township",
               "country": "USA",
@@ -119,6 +122,7 @@
           },
           "store_cy9dpA": {
             "type": "store",
+            "name": "Holiday Market",
             "settings": {
               "city": "Royal Oak",
               "country": "USA",
@@ -132,6 +136,7 @@
           },
           "store_ebDAtU": {
             "type": "store",
+            "name": "Harvest Time Farm Market",
             "settings": {
               "city": "Oxford",
               "country": "USA",
@@ -145,6 +150,7 @@
           },
           "store_KaXjEH": {
             "type": "store",
+            "name": "Picnic Basket",
             "settings": {
               "city": "Plymouth",
               "country": "USA",
@@ -158,6 +164,7 @@
           },
           "store_BatyfK": {
             "type": "store",
+            "name": "Meijer Independence Market",
             "settings": {
               "city": "Village of Clarkston",
               "country": "USA",
@@ -171,6 +178,7 @@
           },
           "store_MrMTzB": {
             "type": "store",
+            "name": "Honey Bee Market",
             "settings": {
               "city": "Detroit",
               "country": "USA",
@@ -184,6 +192,7 @@
           },
           "store_enK4mf": {
             "type": "store",
+            "name": "Taco Taco Mexicana",
             "settings": {
               "city": "Madison Heights",
               "country": "USA",
@@ -197,6 +206,7 @@
           },
           "store_kwVcLt": {
             "type": "store",
+            "name": "Señoritas Mexican Restaurant",
             "settings": {
               "city": "Shelby Township",
               "country": "USA",
@@ -208,8 +218,23 @@
               "map_url": "https://maps.app.goo.gl/wU6QJCXy8RVP8HWv6"
             }
           },
+          "store_GtYaMw": {
+            "type": "store",
+            "name": "La Jalisciense",
+            "settings": {
+              "city": "Detroit",
+              "country": "USA",
+              "label": "La Jalisciense",
+              "address": "3923 Vernor Hwy",
+              "hours": "Mon–Sun 9am–9pm",
+              "lat": "42.32205501959115",
+              "lng": "-83.09098348650832",
+              "map_url": ""
+            }
+          },
           "store_xUEETd": {
             "type": "store",
+            "name": "Carnival Market",
             "settings": {
               "city": "Pontiac",
               "country": "USA",
@@ -233,6 +258,7 @@
           "store_MrMTzB",
           "store_enK4mf",
           "store_kwVcLt",
+          "store_GtYaMw",
           "store_xUEETd"
         ],
         "settings": {
