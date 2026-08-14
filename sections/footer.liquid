@@ -18,6 +18,31 @@
       </a>
       <p class="footer-tagline">{{ section.settings.tagline }}</p>
       <p>{{ section.settings.description }}</p>
+
+      {%- if section.settings.instagram_url != blank or section.settings.facebook_url != blank -%}
+        <ul class="footer-social" role="list">
+          {%- if section.settings.instagram_url != blank -%}
+            <li>
+              <a href="{{ section.settings.instagram_url }}" class="footer-social-link" aria-label="{{ 'sections.footer.social.instagram' | t }}" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
+                  <rect x="2.5" y="2.5" width="19" height="19" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4.5"></circle>
+                  <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"></circle>
+                </svg>
+              </a>
+            </li>
+          {%- endif -%}
+          {%- if section.settings.facebook_url != blank -%}
+            <li>
+              <a href="{{ section.settings.facebook_url }}" class="footer-social-link" aria-label="{{ 'sections.footer.social.facebook' | t }}" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
+                  <path d="M15.5 8.5h-2a1 1 0 0 0-1 1V12h3l-.4 3h-2.6v7h-3v-7H7.5v-3h2V9.2c0-2.3 1.4-3.7 3.6-3.7h2.4v3z"></path>
+                </svg>
+              </a>
+            </li>
+          {%- endif -%}
+        </ul>
+      {%- endif -%}
     </div>
 
     {%- for block in section.blocks -%}
@@ -51,6 +76,33 @@
   </div>
 </footer>
 
+{% stylesheet %}
+  .footer-social {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+  }
+
+  .footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    color: currentColor;
+    transition: opacity 0.15s ease;
+  }
+
+  .footer-social-link:hover,
+  .footer-social-link:focus-visible {
+    opacity: 0.7;
+  }
+{% endstylesheet %}
+
 {% schema %}
 {
   "name": "Footer",
@@ -71,6 +123,20 @@
       "type": "image_picker",
       "id": "logo_image",
       "label": "Logo image"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.social.header"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "t:sections.footer.social.instagram"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "t:sections.footer.social.facebook"
     }
   ],
   "blocks": [

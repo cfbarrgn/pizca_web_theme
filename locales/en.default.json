@@ -27,5 +27,13 @@
   },
   "newsletter": {
     "success": "You're in. Stay fired up."
+  },
+  "sections": {
+    "footer": {
+      "social": {
+        "instagram": "Instagram",
+        "facebook": "Facebook"
+      }
+    }
   }
 }

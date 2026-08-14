@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "footer": {
+      "social": {
+        "header": "Social media",
+        "instagram": "Instagram URL",
+        "facebook": "Facebook URL"
+      }
+    }
+  }
+}
