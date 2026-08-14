@@ -280,7 +280,7 @@
           "title": "In Stores Near You",
           "cta_text": "Can't find us near you? We ship worldwide.",
           "cta_label": "Order Online",
-          "cta_url": ""
+          "cta_url": "shopify://collections/all-sauces"
         }
       },
       "testimonials": {
