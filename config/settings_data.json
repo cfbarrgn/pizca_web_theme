@@ -120,6 +120,19 @@
               "map_url": "https://maps.app.goo.gl/ad5i16u66iQoN6pq7"
             }
           },
+          "store_Hrdmkx": {
+            "type": "store",
+            "settings": {
+              "city": "Oaxaca",
+              "country": "Mexico",
+              "label": "Flagship",
+              "address": "Calle Reforma 402, Centro Histórico",
+              "hours": "Mon–Sat 9am–7pm · Sun 10am–4pm",
+              "lat": "",
+              "lng": "",
+              "map_url": ""
+            }
+          },
           "store_cy9dpA": {
             "type": "store",
             "name": "Holiday Market",
@@ -251,6 +264,7 @@
           "store_JiYWCV",
           "store_JzWWAH",
           "store_794Mnr",
+          "store_Hrdmkx",
           "store_cy9dpA",
           "store_ebDAtU",
           "store_KaXjEH",
@@ -322,6 +336,15 @@
           "message": "The page you're looking for doesn't exist or has been moved.",
           "button_label": "Back to home",
           "button_link": ""
+        }
+      },
+      "blog-listing": {
+        "type": "blog-listing",
+        "settings": {
+          "eyebrow": "The Cookbook",
+          "title": "Recipes & Stories",
+          "description": "Description",
+          "articles_per_page": 9
         }
       }
     },
