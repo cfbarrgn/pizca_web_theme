@@ -92,20 +92,6 @@
               "map_url": "https://maps.app.goo.gl/XA2wNpnKZqqwAUbMA"
             }
           },
-          "store_JzWWAH": {
-            "type": "store",
-            "name": "Algo Especial Super Market",
-            "settings": {
-              "city": "Detroit",
-              "country": "USA",
-              "label": "Algo Especial Super Market",
-              "address": "2628 Bagley St, Detroit, MI 48216",
-              "hours": "Mon–Sun 9am–5pm · Tue Closed",
-              "lat": "42.32567244283664",
-              "lng": "-83.07873313227707",
-              "map_url": "https://maps.app.goo.gl/thxnPt69UnYa9UnU8"
-            }
-          },
           "store_794Mnr": {
             "type": "store",
             "name": "Motor City Tacos",
@@ -262,7 +248,6 @@
         },
         "block_order": [
           "store_JiYWCV",
-          "store_JzWWAH",
           "store_794Mnr",
           "store_Hrdmkx",
           "store_cy9dpA",
