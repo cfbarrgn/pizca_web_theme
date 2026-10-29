@@ -78,6 +78,20 @@
       "stores": {
         "type": "stores",
         "blocks": {
+          "store_BatyfK": {
+            "type": "store",
+            "name": "Meijer Independence Market",
+            "settings": {
+              "city": "Village of Clarkston",
+              "country": "USA",
+              "label": "Meijer Independence Market",
+              "address": "5820 Waldon Rd, Village of Clarkston, MI 48346",
+              "hours": "Mon–Sun 7am–10pm",
+              "lat": "42.73480159801353",
+              "lng": "-83.38273644389393",
+              "map_url": "https://maps.app.goo.gl/dNrUBvRNS1DiaAwR8"
+            }
+          },
           "store_JiYWCV": {
             "type": "store",
             "name": "Neiman's Family Market",
@@ -90,6 +104,48 @@
               "lat": "42.722956072259024",
               "lng": "-83.42815331876595",
               "map_url": "https://maps.app.goo.gl/XA2wNpnKZqqwAUbMA"
+            }
+          },
+          "store_ebDAtU": {
+            "type": "store",
+            "name": "Harvest Time Farm Market",
+            "settings": {
+              "city": "Oxford",
+              "country": "USA",
+              "label": "Harvest Time Farm Market",
+              "address": "1125 S Lapeer Rd, Oxford, MI 48371",
+              "hours": "Mon–Sat 9am–7pm · Sun 9am–6pm",
+              "lat": "42.809353320540495",
+              "lng": "-83.24976010830835",
+              "map_url": "https://maps.app.goo.gl/CRwyYLzH2gZasrJC7"
+            }
+          },
+          "store_xUEETd": {
+            "type": "store",
+            "name": "Carnival Market",
+            "settings": {
+              "city": "Pontiac",
+              "country": "USA",
+              "label": "Carnival Market",
+              "address": "1101 Walton Blvd.",
+              "hours": "Mon–Sat 8am–9pm · Sun 8am–8pm",
+              "lat": "42.679221332259054",
+              "lng": "-83.2601076241384",
+              "map_url": "https://maps.app.goo.gl/1DYEPEJmRDLBsQNd6"
+            }
+          },
+          "store_kwVcLt": {
+            "type": "store",
+            "name": "Señoritas Mexican Restaurant",
+            "settings": {
+              "city": "Shelby Township",
+              "country": "USA",
+              "label": "Señoritas Mexican Restaurant",
+              "address": "48758 Van Dyke Ave, Shelby Township, MI 48317",
+              "hours": "Mon–Thr 11am–8pm · Fri 11am–9pm · Sat-Sun 10am-8pm",
+              "lat": "42.65359800786373",
+              "lng": "-83.0329761476057",
+              "map_url": "https://maps.app.goo.gl/wU6QJCXy8RVP8HWv6"
             }
           },
           "store_794Mnr": {
@@ -120,62 +176,6 @@
               "map_url": "https://maps.app.goo.gl/qokBTBfXAPow9gzY9"
             }
           },
-          "store_ebDAtU": {
-            "type": "store",
-            "name": "Harvest Time Farm Market",
-            "settings": {
-              "city": "Oxford",
-              "country": "USA",
-              "label": "Harvest Time Farm Market",
-              "address": "1125 S Lapeer Rd, Oxford, MI 48371",
-              "hours": "Mon–Sat 9am–7pm · Sun 9am–6pm",
-              "lat": "42.809353320540495",
-              "lng": "-83.24976010830835",
-              "map_url": "https://maps.app.goo.gl/CRwyYLzH2gZasrJC7"
-            }
-          },
-          "store_BatyfK": {
-            "type": "store",
-            "name": "Meijer Independence Market",
-            "settings": {
-              "city": "Village of Clarkston",
-              "country": "USA",
-              "label": "Meijer Independence Market",
-              "address": "5820 Waldon Rd, Village of Clarkston, MI 48346",
-              "hours": "Mon–Sun 7am–10pm",
-              "lat": "42.73480159801353",
-              "lng": "-83.38273644389393",
-              "map_url": "https://maps.app.goo.gl/dNrUBvRNS1DiaAwR8"
-            }
-          },
-          "store_xUEETd": {
-            "type": "store",
-            "name": "Carnival Market",
-            "settings": {
-              "city": "Pontiac",
-              "country": "USA",
-              "label": "Carnival Market",
-              "address": "1101 Walton Blvd.",
-              "hours": "Mon–Sat 8am–9pm · Sun 8am–8pm",
-              "lat": "42.679221332259054",
-              "lng": "-83.2601076241384",
-              "map_url": "https://maps.app.goo.gl/1DYEPEJmRDLBsQNd6"
-            }
-          },
-          "store_MrMTzB": {
-            "type": "store",
-            "name": "Honey Bee Market",
-            "settings": {
-              "city": "Detroit",
-              "country": "USA",
-              "label": "Honey Bee Market – La Colmena",
-              "address": "2443 Bagley St, Detroit, MI 48216",
-              "hours": "Mon–Sat 9am–7pm · Sun 10am–4pm",
-              "lat": "42.325618675175036",
-              "lng": "-83.07649568809575",
-              "map_url": "https://maps.app.goo.gl/VnCnjXEXbyArmn3a7"
-            }
-          },
           "store_enK4mf": {
             "type": "store",
             "name": "Taco Taco Mexicana",
@@ -190,18 +190,18 @@
               "map_url": "https://maps.app.goo.gl/Jccby8qwy2K8LpKZ7"
             }
           },
-          "store_kwVcLt": {
+          "store_MrMTzB": {
             "type": "store",
-            "name": "Señoritas Mexican Restaurant",
+            "name": "Honey Bee Market",
             "settings": {
-              "city": "Shelby Township",
+              "city": "Detroit",
               "country": "USA",
-              "label": "Señoritas Mexican Restaurant",
-              "address": "48758 Van Dyke Ave, Shelby Township, MI 48317",
-              "hours": "Mon–Thr 11am–8pm · Fri 11am–9pm · Sat-Sun 10am-8pm",
-              "lat": "42.65359800786373",
-              "lng": "-83.0329761476057",
-              "map_url": "https://maps.app.goo.gl/wU6QJCXy8RVP8HWv6"
+              "label": "Honey Bee Market – La Colmena",
+              "address": "2443 Bagley St, Detroit, MI 48216",
+              "hours": "Mon–Sat 9am–7pm · Sun 10am–4pm",
+              "lat": "42.325618675175036",
+              "lng": "-83.07649568809575",
+              "map_url": "https://maps.app.goo.gl/VnCnjXEXbyArmn3a7"
             }
           },
           "store_GtYaMw": {
@@ -248,15 +248,15 @@
           }
         },
         "block_order": [
+          "store_BatyfK",
           "store_JiYWCV",
+          "store_ebDAtU",
+          "store_xUEETd",
+          "store_kwVcLt",
           "store_794Mnr",
           "store_cy9dpA",
-          "store_ebDAtU",
-          "store_BatyfK",
-          "store_xUEETd",
-          "store_MrMTzB",
           "store_enK4mf",
-          "store_kwVcLt",
+          "store_MrMTzB",
           "store_GtYaMw",
           "store_X8nC6m",
           "store_7G7dr8"
