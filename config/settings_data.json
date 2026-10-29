@@ -134,20 +134,6 @@
               "map_url": "https://maps.app.goo.gl/CRwyYLzH2gZasrJC7"
             }
           },
-          "store_KaXjEH": {
-            "type": "store",
-            "name": "Picnic Basket",
-            "settings": {
-              "city": "Plymouth",
-              "country": "USA",
-              "label": "Picnic Basket",
-              "address": "49471 Ann Arbor Rd, Plymouth, MI 48170",
-              "hours": "Mon–Sat 7am–9pm · Sun 8am–8pm",
-              "lat": "42.35341330152846",
-              "lng": "-83.52848047460313",
-              "map_url": "https://maps.app.goo.gl/tQ8Z8pLU6HKaVvkz5"
-            }
-          },
           "store_BatyfK": {
             "type": "store",
             "name": "Meijer Independence Market",
@@ -231,6 +217,34 @@
               "lng": "-83.2601076241384",
               "map_url": "https://maps.app.goo.gl/1DYEPEJmRDLBsQNd6"
             }
+          },
+          "store_X8nC6m": {
+            "type": "store",
+            "name": "La Estrella Del Sur",
+            "settings": {
+              "city": "Wixom",
+              "country": "USA",
+              "label": "La Estrella Del Sur",
+              "address": "47722Pontiac Trail #2543, Wixom, MI 48393",
+              "hours": "Mon–Sat 9:30am–8pm/ Sun 9am-5pm",
+              "lat": "42.525337",
+              "lng": "-83.520088",
+              "map_url": "https://www.google.com/maps/place/La+Estrella+Del+Sur/@42.525214,-83.5203889,17z/data=!4m17!1m9!3m8!1s0x8824a602adb7aa3f:0xf3fe6bf08b280c01!2sLa+Estrella+Del+Sur!8m2!3d42.525214!4d-83.5203889!9m1!1b1!16s%2Fg%2F1tlkc_5f!3m6!1s0x8824a602adb7aa3f:0xf3fe6bf08b280c01!8m2!3d42.525214!4d-83.5203889!10e1!16s%2Fg%2F1tlkc_5f?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
+            }
+          },
+          "store_7G7dr8": {
+            "type": "store",
+            "name": "El Mariachi Market",
+            "settings": {
+              "city": "Novi, Michigan",
+              "country": "USA",
+              "label": "El Mariachi Market",
+              "address": "31162 Novi Rd, Novi, MI 48377",
+              "hours": "Mon–Sat 10am–9pm/ Sun 10am-8pm",
+              "lat": "42.525233",
+              "lng": "-83.466182",
+              "map_url": "https://www.google.com/maps/place/El+Mariachi+Mexican+Restaurant/@42.5248631,-83.4688472,17z/data=!3m1!4b1!4m6!3m5!1s0x8824a593b90d6d2f:0xf5338980541def0c!8m2!3d42.5248592!4d-83.4662723!16s%2Fg%2F124t4b6py?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
+            }
           }
         },
         "block_order": [
@@ -238,13 +252,14 @@
           "store_794Mnr",
           "store_cy9dpA",
           "store_ebDAtU",
-          "store_KaXjEH",
           "store_BatyfK",
           "store_MrMTzB",
           "store_enK4mf",
           "store_kwVcLt",
           "store_GtYaMw",
-          "store_xUEETd"
+          "store_xUEETd",
+          "store_X8nC6m",
+          "store_7G7dr8"
         ],
         "settings": {
           "eyebrow": "Find Us",
