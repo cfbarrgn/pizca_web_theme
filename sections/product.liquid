@@ -83,6 +83,14 @@
         <input type="hidden" name="id" id="variant-id" value="{{ product.selected_or_first_available_variant.id }}" />
         <input type="hidden" name="quantity" value="1" />
 
+        {%- for block in section.blocks -%}
+          {%- if block.type == '@app' -%}
+            <div class="product-app-block" {{ block.shopify_attributes }}>
+              {%- render block -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+
         <button
           type="submit"
           class="btn-primary btn-add-to-cart"
@@ -153,6 +161,9 @@
 {
   "name": "Product",
   "settings": [],
+  "blocks": [
+    { "type": "@app" }
+  ],
   "presets": [
     { "name": "Product Page" }
   ]
