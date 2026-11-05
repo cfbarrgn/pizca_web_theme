@@ -83,6 +83,12 @@
         <input type="hidden" name="id" id="variant-id" value="{{ product.selected_or_first_available_variant.id }}" />
         <input type="hidden" name="quantity" value="1" />
 
+        <div
+          class="sealsubs-target-element"
+          data-product="{{ product | json | escape }}"
+          data-handle="{{ product.handle }}"
+        ></div>
+
         {%- for block in section.blocks -%}
           {%- if block.type == '@app' -%}
             <div class="product-app-block" {{ block.shopify_attributes }}>
